@@ -12,8 +12,12 @@ filetype plugin indent on
 " Set number of colors
 set t_Co=256
 
-" Set colorscheme Monokai
-colorscheme muon
+" Set colorscheme muon:
+" colorscheme muon
+
+" Set colorscheme gruvbox (dark version)
+colorscheme gruvbox
+set background=dark
 
 " Line numbering
 set nu
