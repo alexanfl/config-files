@@ -1,0 +1,92 @@
+align=center
+full_text=|
+align=center
+separator=false
+separator_block_width=7
+
+
+[facebook]
+label=
+command=python ~/.config/i3blocks/fb-msg/fb-msg.py
+markup=pango
+interval=60
+
+[SEPARATOR]
+color=#ffffff
+
+[email]
+command=python3 ~/.config/i3blocks/email.py
+markup=pango
+interval=1
+
+[SEPARATOR]
+color=#ffffff
+
+[disk]
+label=
+command=/usr/lib/i3blocks/disk
+interval=60
+
+[SEPARATOR]
+color=#ffffff
+
+[battery]
+command=python3 ~/.config/i3blocks/battery.py
+markup=pango
+interval=60
+
+[SEPARATOR]
+color=#ffffff
+
+[wifi]
+label=
+markup=pango
+command=/usr/lib/i3blocks/wifi
+instance=wlp2s0
+interval=5
+
+[ethernet]
+label=/ 
+command=python3 ~/.config/i3blocks/ethernet.py
+markup=pango
+interval=10
+
+[SEPARATOR]
+color=#ffffff
+
+[volume-label]
+command=python3 ~/.config/i3blocks/volumelabel.py 
+label= 
+markup=pango
+interval=1
+
+[volume]
+command=/usr/lib/i3blocks/volume
+signal=10
+interval=1
+
+
+[SEPARATOR]
+color=#ffffff
+
+[workspace-opacity]
+label=
+command=cat ~/.config/i3/toggle-opac-value
+interval=1
+
+[SEPARATOR]
+color=#ffffff
+
+[date]
+label=
+command=date '+%D'
+interval=1
+
+[time]
+label=
+command=date '+%T'
+interval=1
+
+[keyboard layout]
+command=setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}'
+interval=1
