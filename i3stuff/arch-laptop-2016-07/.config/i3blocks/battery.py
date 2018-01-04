@@ -16,8 +16,8 @@ if not status:
     percentleft = 100
 else:
     state = status.split(": ")[1].split(", ")[0]
-    commasplitstatus = status.split(", ")
-    percentleft = int(commasplitstatus[1].rstrip("%\n"))
+    commasplitstatus = status.partition("\n")[0].split(", ")
+    percentleft = int(commasplitstatus[1].strip("%"))
 
     # stands for charging
     FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
@@ -41,7 +41,7 @@ else:
                 return "\uf242"
             if percentleft < 75:
                 return "\uf241"
-            if percentleft < 100:
+            if percentleft <= 100:
                 return "\uf240"
         symb = symbfunc(percentleft)
 
