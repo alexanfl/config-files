@@ -1,7 +1,8 @@
 import imaplib
+import sys
 
 # Username and password goes in this file:
-fname = ".em-pw"
+fname = "/home/alexanfl/.em-pw"
 
 with open(fname) as f:
     content = f.readlines()
@@ -23,4 +24,4 @@ emails = len(unread_msg_nums)
 if emails == 0:
     print('<span color="#ffffff" font="FontAwesome">\uf0e0</span> <span color="#ffffff"><sup>%d</sup></span>' % emails)
 else:
-    print('<span color="#00ff00" font="FontAwesome">\uf0e0</span> <span color="#00ff00"><sup>%d</sup></span>' % emails)
+    print('<span color="#ffffff" font="FontAwesome">\uf0e0</span> <span color="#00ff00"><sup>%d</sup></span>' % emails)
