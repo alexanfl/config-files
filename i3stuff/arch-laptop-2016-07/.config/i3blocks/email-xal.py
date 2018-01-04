@@ -23,4 +23,5 @@ unread_msg_nums = response[0].split()
 emails = len(unread_msg_nums)
 if emails == 0:
     print('<span color="#7898cc" font="FontAwesome">\uf0e0</span> <span color="#ffffff"><sup>%d</sup></span>' % emails)
+else:
     print('<span color="#7898cc" font="FontAwesome">\uf0e0</span> <span color="#00ff00"><sup>%d</sup></span>' % emails)
