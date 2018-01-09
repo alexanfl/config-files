@@ -4,18 +4,13 @@ align=center
 separator=false
 separator_block_width=7
 
-
-[facebook]
-label=
-command=python ~/.config/i3blocks/fb-msg/fb-msg.py
+[email2]
+command=python ~/.config/i3blocks/email-xal.py
 markup=pango
-interval=60
-
-[SEPARATOR]
-color=#ffffff
+interval=1
 
 [email]
-command=python3 ~/.config/i3blocks/email.py
+command=python ~/.config/i3blocks/muted-email.py
 markup=pango
 interval=1
 
@@ -31,7 +26,7 @@ interval=60
 color=#ffffff
 
 [battery]
-command=python3 ~/.config/i3blocks/battery.py
+command=python ~/.config/i3blocks/battery.py
 markup=pango
 interval=60
 
@@ -42,12 +37,12 @@ color=#ffffff
 label=
 markup=pango
 command=/usr/lib/i3blocks/wifi
-instance=wlp2s0
+instance=wlo1
 interval=5
 
 [ethernet]
 label=/ 
-command=python3 ~/.config/i3blocks/ethernet.py
+command=python ~/.config/i3blocks/ethernet.py
 markup=pango
 interval=10
 
@@ -55,7 +50,7 @@ interval=10
 color=#ffffff
 
 [volume-label]
-command=python3 ~/.config/i3blocks/volumelabel.py 
+command=python ~/.config/i3blocks/volumelabel.py 
 label= 
 markup=pango
 interval=1
@@ -69,9 +64,8 @@ interval=1
 [SEPARATOR]
 color=#ffffff
 
-[workspace-opacity]
-label=
-command=cat ~/.config/i3/toggle-opac-value
+[screen-brightness]
+command=python ~/.config/i3blocks/brightnesslabel.py
 interval=1
 
 [SEPARATOR]
@@ -84,7 +78,7 @@ interval=1
 
 [time]
 label=
-command=date '+%T'
+command=date '+%H:%M'
 interval=1
 
 [keyboard layout]

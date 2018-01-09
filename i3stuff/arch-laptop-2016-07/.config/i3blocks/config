@@ -4,15 +4,10 @@ align=center
 separator=false
 separator_block_width=7
 
-
-[facebook]
-label=
-command=python ~/.config/i3blocks/fb-msg/fb-msg.py
+[email2]
+command=python ~/.config/i3blocks/email-xal.py
 markup=pango
-interval=60
-
-[SEPARATOR]
-color=#ffffff
+interval=1
 
 [email]
 command=python3 ~/.config/i3blocks/email.py
@@ -41,7 +36,7 @@ color=#ffffff
 [wifi]
 label=
 markup=pango
-command=/usr/lib/i3blocks/wifi {ip}
+command=/usr/lib/i3blocks/wifi 
 instance=wlp2s0
 interval=5
 
@@ -84,7 +79,7 @@ interval=1
 
 [time]
 label=
-command=date '%H:%M'
+command=date '+%H:%M'
 interval=1
 
 [keyboard layout]
