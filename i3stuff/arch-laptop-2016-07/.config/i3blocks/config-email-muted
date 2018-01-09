@@ -79,7 +79,7 @@ color=#ffffff
 
 [date]
 label=
-command=date '+%D'
+command=date '+%Y-%m-%d Week: %W'
 interval=1
 
 [time]
