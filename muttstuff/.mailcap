@@ -1,7 +1,0 @@
-application/pdf; zathura %s
-image/jpg; feh %s
-image/jpeg; feh %s
-image/png; feh %s
-image/gif; feh %s
-
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
