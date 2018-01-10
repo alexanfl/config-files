@@ -1,0 +1,19 @@
+#!/bin/sh
+
+TOGGLE1=~/.toggle-opac1
+TOGGLE2=~/.toggle-opac2
+
+if [ ! -e $TOGGLE1 ]; then
+    touch $TOGGLE1
+    killall compton && compton -bc --config ~/.config/compton/compton1.conf
+    echo 100% > ~/.config/i3/toggle-opac-value
+elif [ ! -e $TOGGLE2 ]; then   
+    touch $TOGGLE2
+    killall compton && compton -bc --config ~/.config/compton/compton2.conf
+    echo 0% > ~/.config/i3/toggle-opac-value
+    rm $TOGGLE1
+else
+    rm $TOGGLE2
+    killall compton && compton -bc --config ~/.config/compton/compton.conf
+    echo 35% > ~/.config/i3/toggle-opac-value
+fi

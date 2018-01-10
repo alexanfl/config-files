@@ -1,0 +1,13 @@
+#!/bin/sh
+
+TOGGLE1=~/.config/i3/.toggle-no
+
+if [ ! -e $TOGGLE1 ]; then
+    touch $TOGGLE1
+    setxkbmap -layout no
+    echo no > ~/.config/i3/toggle-lang-value
+else
+    rm $TOGGLE1
+    setxkbmap -layout us
+    echo us > ~/.config/i3/toggle-lang-value
+fi

@@ -1,0 +1,197 @@
+Delivered-To: fleisch91@gmail.com
+Received: by 10.37.11.83 with SMTP id 80csp12765741ybl;
+        Thu, 4 Jan 2018 02:33:27 -0800 (PST)
+X-Google-Smtp-Source: ACJfBovLiNZG6Rr+jSmLJu8nKSJg06WTTx0KY4fzzBY+1AJ3WtkBzhsRLBCqq6N3klfifReCK8uW
+X-Received: by 10.46.29.11 with SMTP id d11mr2681877ljd.24.1515062007096;
+        Thu, 04 Jan 2018 02:33:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1515062007; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AExwa5Ice4ulWYVl6dvW2BTYToq/r7fzi2eNEwbDIHXjvyzU1vtIBR+i1jszTAbwHh
+         X97veZvZysRhKGp7XsnGIDC2z5ibBFmYu3TTQ9EQUaM6HDXEJWrKzdZ+rg/lNjsU6I71
+         F/3dJLymy7ymwmeHC/bhkIzY7/XVJJVYSu2kdNcPN5sEdI3cRpAJtlCLUbX2u80uk0DV
+         igfuaz2fRRh6D+288NbPm82C3fBHw7B8cEG33ePhsl3FuR8kJVeKiTHOieByw9bItfYb
+         Dh6Ucyv9n4QhEdZJktWvU0i/wX/4Chd+ZQz78kublcLkWQva+5yO3Me8UWaEqB6PgQYL
+         Jf5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:auto-submitted:resent-from:ironport-phdr
+         :content-language:accept-language:message-id:date:thread-index
+         :thread-topic:subject:to:from:arc-authentication-results;
+        bh=OXflO0b6AAsvSBJFtHHeAP5QVnmVzOP1hdlr4M/2eF0=;
+        b=I+LpEUY6xNmXhXR9UKUGpa9vOGaY/RoLBDdENcbPp2s/hMY6/l+Ek0h8NIsdis1TcZ
+         eTVzwWREquE7bJx6+5oTho6QHU0yBk5xwrA/VJ6m6Oi4lwyhTfgcc2qZ2c1JKLzVEhT/
+         CHa5rUkHUzq8rlgtwP/EoECNHWj0rnncggZp4rPt1R0kgD4P2PHr/hgAdwJS3MTNq7q5
+         mSOoJmqCf+rtwV1jHcCqGydNBQ7I3ycKBVwto02VYe/DC+LFlaVTerMKgvYZlYNqX92h
+         zvrkAfe4tLNIS+b3SGbxII93vTCtbUXc9PKddvwdoOvLK/6S1q3a4y9XSrpdBYvz81yR
+         9Qsw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of alexander.fleischer@fys.uio.no designates 2001:700:100:10::50 as permitted sender) smtp.mailfrom=alexander.fleischer@fys.uio.no
+Return-Path: <alexander.fleischer@fys.uio.no>
+Received: from mail-out01.uio.no (mail-out01.uio.no. [2001:700:100:10::50])
+        by mx.google.com with ESMTPS id b12si1097160ljf.245.2018.01.04.02.33.26
+        for <fleisch91@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 04 Jan 2018 02:33:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of alexander.fleischer@fys.uio.no designates 2001:700:100:10::50 as permitted sender) client-ip=2001:700:100:10::50;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of alexander.fleischer@fys.uio.no designates 2001:700:100:10::50 as permitted sender) smtp.mailfrom=alexander.fleischer@fys.uio.no
+Received: from mail-mx02.uio.no ([129.240.10.43])
+	by mail-out01.uio.no with esmtp (Exim 4.82_1-5b7a7c0-XX)
+	(envelope-from <alexander.fleischer@fys.uio.no>)
+	id 1eX2py-0005XH-LZ
+	for fleisch91@gmail.com; Thu, 04 Jan 2018 11:33:26 +0100
+Received: from smtp.uio.no ([129.240.2.125] helo=mail-mx02.uio.no)
+	by mail-mx02.uio.no with esmtp  (Exim 4.82_1-5b7a7c0-XX)
+	(envelope-from <alexander.fleischer@fys.uio.no>)
+	id 1eX2py-0003Kf-37
+	for fleisch91@gmail.com; Thu, 04 Jan 2018 11:33:26 +0100
+Received: from mail-ex04.exprod.uio.no ([129.240.52.7])
+	by mail-mx02.uio.no with esmtps (TLSv1.2:AES256-SHA:256)
+	 (Exim 4.82_1-5b7a7c0-XX)
+	(envelope-from <alexander.fleischer@fys.uio.no>)
+	id 1eX2py-0003I7-08
+	for fleisch91@gmail.com; Thu, 04 Jan 2018 11:33:26 +0100
+Received: from mail-ex01.exprod.uio.no (2001:700:100:52::4) by
+ mail-ex04.exprod.uio.no (2001:700:100:52::7) with Microsoft SMTP Server (TLS)
+ id 15.0.1347.2; Thu, 4 Jan 2018 11:33:13 +0100
+Received: from mail-ex01.exprod.uio.no ([::1]) by mail-ex01.exprod.uio.no
+ ([fe80::5c5b:6cfb:485b:6990%19]) with Microsoft SMTP Server id
+ 15.00.1347.000; Thu, 4 Jan 2018 11:33:13 +0100
+From: Medlemsinfo <medlem@tekna.no>
+To: Alexander Fleischer <alexander.fleischer@fys.uio.no>
+Subject: =?iso-8859-1?Q?Har_du_fullf=F8rt_studiene_dine=3F_CRM:0185000005945?=
+Thread-Topic: =?iso-8859-1?Q?Har_du_fullf=F8rt_studiene_dine=3F_CRM:0185000005945?=
+Thread-Index: ATchTE7Dv08VnQZbnRRIO2bThUP6xQ==
+Date: Thu, 4 Jan 2018 10:33:02 +0000
+Message-ID: <a6285fb1199043bba765ad86b316a7b8@mail-ex01.exprod.uio.no>
+Accept-Language: nb-NO, en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-Exchange-Inbox-Rules-Loop: alexander.fleischer@fys.uio.no
+X-MS-TNEF-Correlator:
+ironport-phdr: =?iso-8859-1?Q?9a23:xWvJaRz6dqbgxejXCy+O+j09IxM/srCxBDY+r6Qd2+0XIJqq85mqB?=
+ =?iso-8859-1?Q?kHD//Il1AaPAd2Craocw8Pt8InYEVQa5piAtH1QOLdtbDQizfssogo7HcS?=
+ =?iso-8859-1?Q?eAlf6JvO5JwYzHcBFSUM3tyrjaRsdF8nxfUDdrWOv5jAOBBr/KRB1JuPoE?=
+ =?iso-8859-1?Q?YLOksi7ze+/94HObwlSmDaxfa55IQmrownWqsQYm5ZpJLwryhvOrHtIeuB?=
+ =?iso-8859-1?Q?Wyn1tKFmOgRvy5dq+8YB6/ShItP0v68BPUaPhf6QlVrNYFygpM3o05MLwq?=
+ =?iso-8859-1?Q?xbOSxaE62YGXWUXlhpIBBXF7A3/U5zsvCb2qvZx1S+HNsDtU7s6RSqt4Lt?=
+ =?iso-8859-1?Q?qSB/wiScIKTg58H3MisdtiK5XuQ+tqwBjz4LRZoyeKfhwcb7Hfd4CRWRPQ?=
+ =?iso-8859-1?Q?NtfVzBPDI2/bosAE+UOMP1CoIXhvVYDtweyCRWxCO7p1zRGhmX23ao/0+k?=
+ =?iso-8859-1?Q?5Fg/JwhEvH9YQv3TRt9X1NaESUe6yzKLVyjjDau1Z1ir56IfWdxAsuu2MU?=
+ =?iso-8859-1?Q?qxzccrX00YjDQXFjlKJpIHjIjib2OMNs22B4OphU+Kik3InpB9yojip3Mg?=
+ =?iso-8859-1?Q?gkI/JhoUTx1vZ9it52J44KcCkREJhfNKoCoZcui+AO4ZyWs8uXn1ktDw4x?=
+ =?iso-8859-1?Q?7AIo5K3YSYHxI45yxLHZfyIbYuF7g7mWeuUOzh1gHBod6i6ihux7USty/H?=
+ =?iso-8859-1?Q?wW8y73VpWtSVInNzBu3MD2hHQ98eKTOZ28F271jaVzQ/T7/lJIUUzlaXGN?=
+ =?iso-8859-1?Q?ZEs2qUwlp8PsUTbGS/2hVn2gLeWdko6/uio7PzqbLb4qpCTLoN6hQDxPrk?=
+ =?iso-8859-1?Q?gl8CmHeg0LgwDU3Ka+eig27Dv50n5QLJWgfIslqnVqJHaJcIFqa6lGwJZz?=
+ =?iso-8859-1?Q?5ov5wyiAzu8zdgVk2MLIVZddBKClYfpOlXOIP7iDfe4hlShiDJryO7bMb3?=
+ =?iso-8859-1?Q?lHJrNK2POkKv/crZ+7U5T0hA/zdZY555MELEOPOrzWlPttNzfFhI2KQi0z?=
+ =?iso-8859-1?Q?PjoCdpn0IMRRHyAArWDPKPctV+H+OMvI/KQa48Vpjn9MeMo5/DujH8ig1M?=
+ =?iso-8859-1?Q?dYKip3ZwNZHC+GfQ1a3meNFToj9YaGmcHpEIXSOH6gVuOXCQbM3+2UrI14?=
+ =?iso-8859-1?Q?D02EsSoCYrCXYutjaap0jagWIBXYSZADQbfP23vctChVvsIZSeJI8lvlXR?=
+ =?iso-8859-1?Q?QULWtT4Ik/Q2jtwnzjbxgeLmHshYEvI7ugYAmr9bYkgs/oHktV5yQ?=
+x-ironport-anti-spam-filtered: true
+x-ironport-anti-spam-result: A2HxAwAoAk5a/wkNAQpdHgEGDIJKAYFZgRsHsRCFZYIBCieFFAKEcxQBAQEBAQEBAQEBAoEQgjgkAQ54AQEBAQEBAQEBTAIIgXQBDDs5FBMEEwiJQlcdtFuKPgEBCCMFhBODZ4Nign+BZxQEgSMBEgEhg0aCNAWScJBmgXyBKpIUhBKPcZcLgTw2gQNvgQSCZoJggXd4hkqBJYEWAQEB
+x-ironport-av: E=Sophos;i="5.45,507,1508796000";
+    d="scan'208,217";a="2699651"
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.73.13.2]
+x-uio-spf-received: Received-SPF: pass (mail-mx04.uio.no: domain of tekna.no
+ designates 137.221.26.8 as permitted sender) client-ip=137.221.26.8;
+ envelope-from=medlem@tekna.no; helo=mta02.intility.com;
+Resent-From: <alexander.fleischer@fys.uio.no>
+x-ms-exchange-parent-message-id: <83B35FA50C6141679123051D97295F211D38543FAC55@MEDLEM.TEKNA.NO>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+Content-Type: multipart/alternative;
+	boundary="_000_a6285fb1199043bba765ad86b316a7b8mailex01exproduiono_"
+MIME-Version: 1.0
+X-UiO-SPF-Received: Received-SPF: neutral (mail-mx02.uio.no: 129.240.52.7 is neither permitted nor denied by domain of fys.uio.no) client-ip=129.240.52.7; envelope-from=alexander.fleischer@fys.uio.no; helo=mail-ex04.exprod.uio.no;
+X-UiO-Rescan-Needed: * mail-mx02.uio.no
+X-UiO-SPF-Received: Received-SPF: pass (mail-mx02.uio.no: domain of fys.uio.no designates 129.240.2.125 as permitted sender) client-ip=129.240.2.125; envelope-from=alexander.fleischer@fys.uio.no; helo=mail-mx02.uio.no;
+X-UiO-Spam-info: not spam, SpamAssassin (score=0.6, required=5.0, autolearn=disabled, AC_HTML_NONSENSE_TAGS=1.999,HEADER_FROM_DIFFERENT_DOMAINS=0.25,HTML_MESSAGE=0.001,RCVD_IN_DNSWL_MED=-2.3,SPF_NEUTRAL=0.652,T_RP_MATCHES_RCVD=-0.01, uiobl=NO, uiouri=NO)
+X-UiO-Scanned: BF86EA807D403523399B03564989A527776944AC
+X-UiOonly: F494E241D8D18E3561A83900EB2EA35472FEA118
+
+--_000_a6285fb1199043bba765ad86b316a7b8mailex01exproduiono_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hei Alexander
+
+For =E5 kunne gi deg et relevant tilbud, lurer vi p=E5 om du har fullf=F8rt=
+ masterstudiene dine.
+
+Dette oppdaterer du enkelt p=E5 Min side<https://www.tekna.no/minside/minpr=
+ofil/?anchor=3Dutdannelse&utm_source=3Dcrm&utm_medium=3Demail&utm_campaign=
+=3Dbekrefte-utdanning>. Brukernavnet ditt er: alexander.fleischer@fys.uio.n=
+o
+
+Lurer du p=E5 noe, ta kontakt med oss p=E5 medlem@tekna.no<mailto:medlem@te=
+kna.no> eller ring v=E5rt hyggelige medlemskontor p=E5 22 94 75 00.
+
+Hilsen oss i Tekna
+
+--_000_a6285fb1199043bba765ad86b316a7b8mailex01exproduiono_
+Content-Type: text/html; charset="iso-8859-1"
+Content-ID: <C34D680A1DE81E4AB5E0244C51867EFD@mail.uio.no>
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<span><span><span><span><span><span><span><span><span>
+<div style=3D"display: inline;"><span style=3D"line-height: 107%; font-fami=
+ly: &quot;Calibri&quot;,sans-serif; font-size: 11pt; mso-ascii-theme-font: =
+minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: mino=
+r-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Tim=
+es New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: NO-=
+BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font face=3D"=
+Arial" size=3D"3">Hei
+ Alexander <br>
+<br>
+For =E5 kunne gi deg et relevant tilbud, lurer vi p=E5 om du har&nbsp;fullf=
+=F8rt masterstudiene dine.<br>
+<br>
+</font></span></div>
+<div style=3D"display: inline;"><span style=3D"line-height: 107%; mso-ascii=
+-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-the=
+me-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-fami=
+ly: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-=
+language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><=
+font face=3D"Arial">Dette
+ oppdaterer du enkelt p=E5&nbsp;<a id=3D"1link" href=3D"https://www.tekna.n=
+o/minside/minprofil/?anchor=3Dutdannelse&amp;utm_source=3Dcrm&amp;utm_mediu=
+m=3Demail&amp;utm_campaign=3Dbekrefte-utdanning">Min side</a>. Brukernavnet=
+ ditt er: alexander.fleischer@fys.uio.no&nbsp;<br>
+<br>
+</font></span></div>
+<div style=3D"display: inline;"><span style=3D"line-height: 107%; mso-ascii=
+-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-the=
+me-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-fami=
+ly: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-=
+language: NO-BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><=
+font face=3D"Arial">Lurer
+ du p=E5 noe, ta kontakt med oss p=E5 </font><a href=3D"mailto:medlem@tekna=
+.no"><font face=3D"Arial">medlem@tekna.no</font></a><font face=3D"Arial"> e=
+ller ring v=E5rt hyggelige medlemskontor p=E5 22 94 75 00.<br>
+<br>
+</font></span></div>
+<div style=3D"display: inline;"><span style=3D"line-height: 107%; font-fami=
+ly: &quot;Calibri&quot;,sans-serif; font-size: 11pt; mso-ascii-theme-font: =
+minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: mino=
+r-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Tim=
+es New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: NO-=
+BOK; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font size=3D"=
+2"><font size=3D"3"><font face=3D"Arial">Hilsen
+ oss i Tekna</font></font></font><br>
+</span></div>
+<p></p>
+</span></span></span></span></span></span></span></span></span>
+</body>
+</html>
+
+--_000_a6285fb1199043bba765ad86b316a7b8mailex01exproduiono_--
