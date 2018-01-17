@@ -59,7 +59,7 @@ nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 " hi Normal guibg=#32322f ctermbg=236
 " hi NonText guibg=#32322f ctermbg=236
 hi ColorColumn guibg=#2a2d27 ctermbg=0
-let &colorcolumn="81,".join(range(120,999),",")
+let &colorcolumn="79,".join(range(120,999),",")
 
 " set tab configuration
 set smartindent
