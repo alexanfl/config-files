@@ -20,6 +20,8 @@
 !!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
 
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=9
+
 #define S_base03        #1c1c1c
 !!Original:             #002b36
 
