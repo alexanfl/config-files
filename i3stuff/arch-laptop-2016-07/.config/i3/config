@@ -59,18 +59,18 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
 # Move to previous/next workspace
 bindsym $mod+Ctrl+h workspace prev
 bindsym $mod+Ctrl+j workspace prev
 bindsym $mod+Ctrl+k workspace next
 bindsym $mod+Ctrl+l workspace next
 
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -98,7 +98,7 @@ bindsym $mod+Shift+v split v
 
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -142,10 +142,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Lock screen - simple with black screen
-# bindsym $mod+shift+l exec i3lock -n -c 000000
+bindsym $mod+shift+l exec i3lock -n -c 000000
 
 # Blur lock screen key combination
-bindsym $mod+shift+l exec lock
+# bindsym $mod+shift+l exec lock
 
 # Toggle opacity of inactive windows, see .i3/toggle-opac and .i3bloacks
 bindsym $mod+Shift+o exec toggle-opac
@@ -209,7 +209,7 @@ set $grey #121212
 
 
 bar {
-        status_command i3blocks -c .config/i3blocks/config
+        status_command i3blocks -c .config/i3blocks/muted-email-config
         position top
         strip_workspace_numbers yes
         separator_symbol "]━["
@@ -247,9 +247,12 @@ exec syndaemon -i 1.0 -d -K
 exec --no-startup-id xrdb -load ~/.Xresources
 
 # Automatically lock screen with blur (see the file /bin/lock)
-exec --no-startup-id i3-msg 'exec xautolock -time 5 -locker lock'
+exec --no-startup-id i3-msg 'exec xautolock -time 5 -locker lock-dark'
 
 # Gaps - using Airblade Gaps AUR
 # for_window [class="^.*"] border pixel 5
 # gaps inner 10
 # gaps outer 20
+#
+
+exec xset -b
