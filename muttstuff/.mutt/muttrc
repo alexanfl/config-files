@@ -29,6 +29,7 @@ source "~/.mutt/personal"
 # We must set it right now otherwise the 'folder' variable will change in the next sourced file.
 folder-hook fleisch91@gmail.com/ 'source ~/.mutt/personal'
 
+
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/work<enter><change-folder>!<enter>'
@@ -115,19 +116,19 @@ color header		color178    	color233    '^subject:'
 color header    	color31     	color233    '^user-agent:'
 color header		color29     	color233    '^reply-to:'
 
-#color header	magenta default '^(status|lines|date|received|sender|references):'
-#color header	magenta default '^(pr|mime|x-|user|return|content-)[^:]*:'
-#color header	brightyellow default '^content-type:'
-#color header	magenta default '^content-type: *text/plain'
-# color header	brightgreen default '^list-[^:]*:'
-#mono  header    bold	            '^(subject):.*$'
-#color header	brightcyan default	'^(disposition)'
-#color header	green default	'^(mail-)?followup'
-#color header	white default	'^reply'
-#color header	brightwhite default	'^(resent)'
-# color header	brightwhite default	'^from:'
+color header	magenta default '^(status|lines|date|received|sender|references):'
+color header	magenta default '^(pr|mime|x-|user|return|content-)[^:]*:'
+color header	brightyellow default '^content-type:'
+color header	magenta default '^content-type: *text/plain'
+color header	brightgreen default '^list-[^:]*:'
+mono  header    bold	            '^(subject):.*$'
+color header	brightcyan default	'^(disposition)'
+color header	green default	'^(mail-)?followup'
+color header	white default	'^reply'
+color header	brightwhite default	'^(resent)'
+color header	brightwhite default	'^from:'
 
-#mono index	bold '~h "^content-type: *(multipart/(mixed|signed|encrypted)|application/)"'
-#color index	green black '~h "^content-type: *multipart/(signed|encrypted)"'
+mono index	bold '~h "^content-type: *(multipart/(mixed|signed|encrypted)|application/)"'
+color index	green black '~h "^content-type: *multipart/(signed|encrypted)"'
 
-#color sidebar_new color39 color234 
+color sidebar_new color39 color234 
