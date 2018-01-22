@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashlane</title>
+    <!-- Make links work: -->
+    <base target="_blank">
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #container {
+        width: 350px;
+        height: 561px;
+        overflow: hidden;
+      }
+      .loader {
+        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA2NCAxNiIgZmlsbD0iI0Q2RDZENiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBmcm9tPSIxIiB0bz0iMSIgYmVnaW49IjBzIiBkdXI9IjFzIiB2YWx1ZXM9Ii41Oy43NTsxOy41IiBjYWxjTW9kZT0ibGluZWFyIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjwvY2lyY2xlPjxjaXJjbGUgY3g9IjMyIiBjeT0iOCIgcj0iOCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBmcm9tPSIxIiB0bz0iMSIgYmVnaW49IjBzIiBkdXI9IjFzIiB2YWx1ZXM9IjE7LjU7Ljc1OzEiIGNhbGNNb2RlPSJsaW5lYXIiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9jaXJjbGU+PGNpcmNsZSBjeD0iNTYiIGN5PSI4IiByPSI4Ij48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJmaWxsLW9wYWNpdHkiIGZyb209IjEiIHRvPSIxIiBiZWdpbj0iMHMiIGR1cj0iMXMiIHZhbHVlcz0iLjc1OzE7LjU7Ljc1IiBjYWxjTW9kZT0ibGluZWFyIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPjwvY2lyY2xlPjwvc3ZnPg==') no-repeat center 309px;
+        background-size: 64px 16px;
+      }
+      #head {
+        height: 121px;
+        background: hsl(192, 73%, 29%);
+        display: flex;
+      }
+      #head .tab {
+        width: 100px;
+        height: 58px;
+        border-right: solid 1px hsl(192, 38%, 42%);
+        background-color: hsl(192, 74%, 26%);
+        text-align: center;
+      }
+      #head .tab:last-child {
+        width: 50px;
+        border-right: none;
+      }
+      #head .tab .inner {
+        display: inline-block;
+        opacity: 0.6;
+      }
+      #head .tab .all {
+        width: 18px;
+        height: 13px;
+        margin-top: 17px;
+      }
+      #head .tab .website {
+        width: 18px;
+        height: 18px;
+        margin-top: 14px;
+      }
+      #head .tab .generator{
+        width: 18px;
+        height: 19px;
+        margin-top: 14px;
+      }
+      #head .tab .more {
+        width: 12px;
+        height: 2px;
+        margin-top:28px
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="loader">
+      <div id="head">
+        <div class="tab">
+          <img class="inner all" width='18px' height='13px' src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDE4IDEzIj4gIDxwYXRoIGQ9Ik0xNy41IDEyLjVILjVMLjU0LjVoNmwyIDJoOXptMC03aC0xNCIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==" />
+        </div>
+        <div class="tab">
+          <img class="inner website" width='18px' height='18px' src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCI+ICA8ZGVmcz4gICAgPHBhdGggaWQ9ImEiIGQ9Ik0wIDB2MThoMThWMHoiLz4gIDwvZGVmcz4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgIDxtYXNrIGlkPSJiIiBmaWxsPSIjZmZmIj4gICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIi8+ICAgIDwvbWFzaz4gICAgPHBhdGggZmlsbD0iI0ZGRiIgZD0iTTkgMTIuMDA4YTIuOTg4IDIuOTg4IDAgMCAxLTEuODYzLS42NDcgMy4wMTUgMy4wMTUgMCAwIDEtLjkwNy0zLjUzYy4xNS0uMzU3LjM2Ni0uNjguNjQzLS45NTcuMjc0LS4yNzYuNTk2LS40OTQuOTU0LS42NDZhMy4wMzUgMy4wMzUgMCAwIDEgMi4zMS0uMDE0IDMuMDAyIDMuMDAyIDAgMCAxIDEuNzk4IDIuMTQzYy4wNDYuMjEzLjA3LjQzLjA3LjY0M2EuNS41IDAgMSAxLTEgMCAyLjA1OCAyLjA1OCAwIDAgMC0uMTY3LS44IDIuMDM2IDIuMDM2IDAgMCAwLS40NTItLjY1MyAyLjAzNSAyLjAzNSAwIDAgMC0uNjI3LS40MDggMi4wMyAyLjAzIDAgMCAwLTEuNTQyLjAxQTIuMDAyIDIuMDAyIDAgMCAwIDYuOTk0IDkgMi4wMSAyLjAxIDAgMCAwIDkgMTEuMDA2YS41LjUgMCAwIDEgMCAxbS0yLjY4NSAyLjAwOGMuMDc2IDAgLjE1LjAxNy4yMi4wNS4yOS4xNDIuNTUuMjQ4LjguMzI1LjE1NS4wNDguMjc3LjE3LjMyNy4zMjVsLjU3NyAxLjc5NWMuMTUuNDkuMjkuNDkuMzYuNDloLjk5MmMuMTQ0IDAgLjI2My0uMTYuMzU1LS40NzdsLjM5NC0xLjc3YS41LjUgMCAwIDEgLjM0LS4zNjcgNS41OSA1LjU5IDAgMCAwIDEuMTA0LS40ODcuNTAyLjUwMiAwIDAgMSAuNDYyLS4wMmwxLjcwOC44MWMuNDYuMjI0LjU1Ni4xMi42MDIuMDdsLjY3OC0uNzIzYy4xLS4xMDYuMDY1LS4zMDItLjEwMi0uNTg1bC0xLjAyNS0xLjUwM2EuNTAyLjUwMiAwIDAgMS0uMDM3LS41Yy4xNS0uMzEyLjI3LS42MzUuMzYtLjk1OGEuNTA0LjUwNCAwIDAgMSAuMzEzLS4zMzhsMS43NzgtLjYzN2MuNDg3LS4xNjcuNDgtLjMwOC40OC0uMzc2bC0uMDMzLS45OTJjLS4wMDUtLjE0NS0uMTY4LS4yNi0uNDg2LS4zNGwtMS43ODUtLjMzOGEuNDk4LjQ5OCAwIDAgMS0uMzgtLjMzIDUuNDA0IDUuNDA0IDAgMCAwLS40MS0uOTEyLjQ5OC40OTggMCAwIDEtLjAxNS0uNDYybC44MTItMS43MDRjLjIyNy0uNDYuMTIzLS41NTguMDczLS42MDVsLS43MTgtLjY4Yy0uMTA4LS4xLS4zMDMtLjA2Ni0uNTg1LjFsLTEuNTA1IDEuMDJhLjUuNSAwIDAgMS0uNS4wMzUgNS42NyA1LjY3IDAgMCAwLS44MDQtLjMyNi41LjUgMCAwIDEtLjMyNy0uMzI0TDkuNzYgMS40OUM5LjYxIDEgOS40NyAxIDkuNCAxaC0uOTkyYy0uMTQ1IDAtLjI2NC4xNi0uMzU1LjQ3NUw3LjY2IDMuMjQyYS41MDIuNTAyIDAgMCAxLS4zNC4zN2MtLjM3My4xMTUtLjc0Ni4yOC0xLjEwNi40ODZhLjUuNSAwIDAgMS0uNDYzLjAyTDQuMDQ2IDMuMzFjLS40Ni0uMjI2LS41NTYtLjEyMi0uNi0uMDczbC0uNjguNzI1Yy0uMS4xMDYtLjA2NC4zMDMuMTAzLjU4NUwzLjg5IDYuMDVjLjEuMTQ4LjExNi4zMzguMDM4LjVhNS40OCA1LjQ4IDAgMCAwLS4zNi45NTguNS41IDAgMCAxLS4zMTIuMzM4bC0xLjc3Ny42MzdjLS40ODcuMTY3LS40ODIuMzEtLjQ4LjM3OGwuMDMzLjk5Yy4wMDQuMTQ3LjE2OC4yNi40ODYuMzQzbDEuNzg0LjMzN2MuMTc2LjAzMy4zMi4xNTcuMzguMzI2LjExLjMyNC4yNS42MzIuNDEuOTE3LjA4LjE0LjA4Ni4zMTMuMDE1LjQ2bC0uODEyIDEuNzA2Yy0uMjI4LjQ2LS4xMjQuNTU2LS4wNzMuNjA0bC43MTguNjhjLjEwNi4xLjMuMDY1LjU4NS0uMTAybDEuNTA3LTEuMDJhLjUwMy41MDMgMCAwIDEgLjI4LS4wODZNOS41OTIgMThIOC42Yy0uNjMgMC0xLjA3Mi0uNC0xLjMxNC0xLjE5bC0uNDk3LTEuNTQ4Yy0uMTQtLjA1LS4yODItLjEwNy0uNDMtLjE3M2wtMS4yOTguODc4Yy0uOTYzLjU2Mi0xLjU0Mi4yMy0xLjgwNC0uMDJsLS43Mi0uNjhjLS40Ni0uNDM1LS41MDYtMS4wMy0uMTQtMS43NjdsLjctMS40N2E3LjAxNCA3LjAxNCAwIDAgMS0uMjU2LS41N2wtMS41NC0uMjkyQy4yMjIgMTAuODkuMDQ2IDEwLjI0NS4wMzQgOS44ODRMMCA4Ljg5Yy0uMDE4LS42My4zNjYtMS4wODUgMS4xNDctMS4zNTJsMS41MzItLjU1Yy4wNjUtLjIxLjE0LS40MTIuMjI1LS42MWwtLjg4LTEuMjk0Yy0uNTctLjk2LS4yMzctMS41NDMuMDEtMS44MDdsLjY3OC0uNzI1Yy40My0uNDYgMS4wMjMtLjUwOCAxLjc2NS0uMTQ2bDEuNDcuNjk3Yy4yNi0uMTQuNTI4LS4yNTcuNzk2LS4zNTVsLjM0LTEuNTJDNy4zOS4xNTQgOC4wNDQgMCA4LjQwOCAwSDkuNGMuNjI4IDAgMS4wNy40IDEuMzEgMS4xOWwuNSAxLjU0NGMuMTQuMDUuMjgzLjExLjQzMi4xNzVsMS4yOTQtLjg3N2MuOTU4LS41NjcgMS41NC0uMjM0IDEuODA1LjAxNmwuNzIuNjhjLjQ2LjQzNC41MDcgMS4wMy4xNCAxLjc3bC0uNyAxLjQ2N2MuMDk1LjE4NS4xODIuMzc3LjI2LjU3M2wxLjUzNi4yOTJjMS4wOC4yNzMgMS4yNTcuOTIgMS4yNyAxLjI4MkwxOCA5LjExYy4wMi42MjgtLjM2NSAxLjA4My0xLjE0NiAxLjM1MmwtMS41MzQuNTVjLS4wNjUuMjA1LS4xNC40MDgtLjIyNy42MDhsLjg4MiAxLjI5NWMuNTcuOTYuMjM3IDEuNTQzLS4wMSAxLjgwN2wtLjY3OC43MjVjLS40MzIuNDYtMS4wMjUuNTA3LTEuNzY2LjE0NmwtMS40Ny0uNjk4Yy0uMjYuMTM3LS41MjcuMjU1LS43OTQuMzUzbC0uMzQgMS41MjVDMTAuNjA0IDE3Ljg0MyA5Ljk1MyAxOCA5LjU5MiAxOCIgbWFzaz0idXJsKCNiKSIvPiAgPC9nPjwvc3ZnPg==" />
+        </div>
+        <div class="tab">
+          <img class="inner generator" width='18px' height='19px' src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDE5IDE5Ij4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjRkZGIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPiAgICA8cGF0aCBkPSJNOSAuNWM1LjUxIDAgOC41MiAzLjg2IDguNTIgNy42YTYuNjEgNi42MSAwIDAgMS0zIDUuNzJ2NC40NnMtNC0yLjIzLTUuNTQtMy40QzMuNTEgMTQuODguNSAxMS44NC41IDguMVMzLjUxLjUgOSAuNXoiLz4gICAgPHBhdGggZD0iTTYuODMgOS4yN0w1Ljc3IDcuN1Y1LjkiLz4gICAgPHBhdGggZD0iTTQuNjYgOS4yNEw1Ljc3IDcuN2wxLjc1LS41Nm0tMy41MyAwbDEuNzguNTZtNy42IDEuNTdMMTIuMzEgNy43VjUuOSIvPiAgICA8cGF0aCBkPSJNMTEuMiA5LjI0bDEuMTEtMS41NCAxLjc1LS41Nm0tMy41MyAwbDEuNzguNTYiLz4gIDwvZz48L3N2Zz4=" />
+        </div>
+        <div class="tab">
+          <img class="inner more" width='12px' height='2px' src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIyIiB2aWV3Qm94PSIwIDAgMTIgMiI+ICA8cGF0aCBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xIDJhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyem01IDBhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyem01IDBhMSAxIDAgMSAxIDAtMiAxIDEgMCAwIDEgMCAyeiIvPjwvc3ZnPg==" />
+        </div>
+      </div>
+      <div id="app" style="display: none;"></div>
+    </div>
+    <script type="text/javascript" src="index.js" crossorigin="anonymous" async></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+   "ExtensionDescription": {
+      "description": "Description of the extension on chrome_extension page below extension title",
+      "message": "再也不会忘记一个密码。在您浏览时安全存储这些密码。自动填充密码，让您即时登录到最喜欢的网站。"
+   },
+   "ExtensionName": {
+      "description": "Name of the extension on chrome_extension page and on Chrome Web Store page",
+      "message": "Dashlane - 密码管理器"
+   }
+}

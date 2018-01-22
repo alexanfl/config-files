@@ -1,0 +1,85 @@
+.kb-headerinject {
+  font-family: Nunito, 'Open Sans', sans-serif;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 22px 22px;
+  width: 160px;
+  margin-bottom: 5px;
+  padding: 4px 4px 4px 28px;
+  text-align: left;
+  font-size: 13px;
+  color: #f07818;
+  font-weight: 700;
+  cursor: pointer;
+}
+.kb-headerinject a.kb-link {
+  color: #f07818;
+  text-decoration: none;
+}
+body.santander .kb-headerinject {
+  border-color: #f07818;
+}
+.kb-headerinject:hover {
+  text-decoration: underline;
+}
+.kb-sliderinject {
+  font-family: Helvetica, sans-serif;
+  position: fixed;
+  z-index: 2147483646;
+  top: 20px;
+  right: 20px;
+  width: 420px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  line-height: 15px;
+}
+.kb-sliderinject .kb-logo {
+  float: left;
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+}
+.kb-sliderinject .kb-inner {
+  float: left;
+  width: 300px;
+  padding: 20px 10px;
+  text-align: center;
+}
+.kb-sliderinject .kb-inner .kb-info {
+  display: block;
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.kb-sliderinject .kb-inner .kb-btn {
+  background-color: #83b653;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 30px;
+  border-radius: 3px;
+  color: #fff;
+  width: 230px;
+  margin-top: 13px;
+  padding: 10px 15px 10px 0;
+  text-align: center;
+  font-size: 15px;
+  display: inline-block;
+}
+.kb-sliderinject .kb-close {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  z-index: 2147483647;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+{
+   "ExtensionDescription": {
+      "description": "Description of the extension on chrome_extension page below extension title",
+      "message": "다른 암호를 절대 잊지 마세요. 검색할 때 안전하게 암호를 보호하세요. 자동 입력을 통해 즐겨찾는 웹 사이트에 즉시 로그인합니다."
+   },
+   "ExtensionName": {
+      "description": "Name of the extension on chrome_extension page and on Chrome Web Store page",
+      "message": "Dashlane 암호 관리자"
+   }
+}

@@ -1,0 +1,842 @@
+{
+   "acceptNewKey": {
+      "description": "Label for a button to accept a new safety number",
+      "message": "Přijmout"
+   },
+   "androidMessageLengthWarning": {
+      "description": "Warning that long messages could not get received completely by Android clients.",
+      "message": "Android clients will only receive the first 2000 characters of this message."
+   },
+   "attemptingReconnection": {
+      "description": "",
+      "message": "Attempting reconnect in $reconnect_duration_in_seconds$ seconds",
+      "placeholders": {
+         "reconnect_duration_in_seconds": {
+            "content": "$1",
+            "example": "10"
+         }
+      }
+   },
+   "audioNotificationDescription": {
+      "description": "Description for audio notification setting",
+      "message": "Přehrát zvukové upozornění"
+   },
+   "cancel": {
+      "description": "",
+      "message": "Zrušit"
+   },
+   "changedRecently": {
+      "description": "Shown on confirmation dialog when user attempts to send a message",
+      "message": "Your safety number with $name$ has changed recently. This could mean that someone is trying to intercept your communication or that $name$ has simply reinstalled Signal.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "changedRecentlyMultiple": {
+      "description": "Shown on confirmation dialog when user attempts to send a message",
+      "message": "Your safety numbers with multiple group members have changed recently. This could mean that someone is trying to intercept your communication or that they have simply reinstalled Signal."
+   },
+   "changedRightAfterVerify": {
+      "description": "Shown on the safety number screen when the user has selected to verify/unverify a contact's safety number, and we immediately discover a safety number change",
+      "message": "The safety number you are trying to verify has changed. Please review your new safety number with $name$. Remember, this change could mean that someone is trying to intercept your communication or that $name$ has simply reinstalled Signal.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "changedSinceVerified": {
+      "description": "Shown on confirmation dialog when user attempts to send a message",
+      "message": "Your safety number with $name$ has changed since you last verified. This could mean that someone is trying to intercept your communication or that $name$ has simply reinstalled Signal.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "changedSinceVerifiedMultiple": {
+      "description": "Shown on confirmation dialog when user attempts to send a message",
+      "message": "Your safety numbers with multiple group members have changed since you last verified. This could mean that someone is trying to intercept your communication or that they have simply reinstalled Signal."
+   },
+   "checkNetworkConnection": {
+      "description": "Obvious instructions for when a user's computer loses its network connection",
+      "message": "Check your network connection."
+   },
+   "clickToSave": {
+      "description": "Hover text for attachment filenames",
+      "message": "Click to save"
+   },
+   "confirmMigration": {
+      "description": "Confirmation dialogue when beginning migration",
+      "message": "Start migration process? You will not be able to send or receive Signal messages from this application while the migration is in progress."
+   },
+   "connecting": {
+      "description": "Displayed when the desktop client is currently connecting to the server.",
+      "message": "Connecting"
+   },
+   "debugLogExplanation": {
+      "description": "",
+      "message": "Tento záznam bude přispěvatelům veřejně zpřístupněn k prohlížení. Můžete si jej před odesláním zkontrolovat a upravit."
+   },
+   "delete": {
+      "description": "",
+      "message": "Delete"
+   },
+   "deleteConversationConfirmation": {
+      "description": "Confirmation dialog text that asks the user if they really wish to delete the conversation. Answer buttons use the strings 'ok' and 'cancel'. The deletion is permanent, i.e. it cannot be undone.",
+      "message": "Trvale smazat tuto konverzaci?"
+   },
+   "deleteMessage": {
+      "description": "",
+      "message": "Delete this message"
+   },
+   "deleteMessages": {
+      "description": "Menu item for deleting messages, title case.",
+      "message": "Smazat zprávy"
+   },
+   "deleteWarning": {
+      "description": "",
+      "message": "Are you sure? Clicking 'delete' will permanently remove this message from this device."
+   },
+   "disableNotifications": {
+      "description": "Label for disabling notifications",
+      "message": "Vypnout oznámení"
+   },
+   "disappearingMessages": {
+      "description": "Conversation menu option to enable disappearing messages",
+      "message": "Mizející zprávy"
+   },
+   "disconnected": {
+      "description": "Displayed when the desktop client cannot connect to the server.",
+      "message": "Odpojen"
+   },
+   "error": {
+      "description": "",
+      "message": "Chyba"
+   },
+   "expiredWarning": {
+      "description": "Warning notification that this version of the app has expired",
+      "message": "Tato verze aplikace Signal Desktop je zastaralá. Abyste mohli dále komunikovat, aktualizujte ji prosím na nejnovější verzi."
+   },
+   "export": {
+      "description": "Button to allow the user to export all data from app as part of migration process",
+      "message": "Choose directory"
+   },
+   "exportAgain": {
+      "description": "If user has already exported once, this button allows user to do it again if needed",
+      "message": "Export again"
+   },
+   "exportComplete": {
+      "description": "Message shown on the migration screen when we are done exporting data",
+      "message": "Your data has been exported to: \u003Cp>\u003Cb>$location$\u003C/b>\u003C/p> You'll be able to import this data as you set up \u003Ca target='_blank' href='https://support.whispersystems.org/hc/en-us/articles/214507138'>the new Signal Desktop\u003C/a>.",
+      "placeholders": {
+         "location": {
+            "content": "$1",
+            "example": "/Users/someone/somewhere"
+         }
+      }
+   },
+   "exportError": {
+      "description": "Helper text if the user went forward on migrating the app, but ran into an error",
+      "message": "Unfortunately, something went wrong during the export. First, double-check your target empty directory for write access and enough space. Then, please submit a debug log so we can help you get migrated!"
+   },
+   "exportInstructions": {
+      "description": "Description of the export process",
+      "message": "The first step is to choose a directory to store this application's exported data. It will contain your message history and sensitive cryptographic data, so be sure to save it somewhere private."
+   },
+   "exporting": {
+      "description": "Message shown on the migration screen while we export data",
+      "message": "Please wait while we export your data. It may take several minutes. You can still use Signal on your phone and other devices during this time."
+   },
+   "failedToSend": {
+      "description": "",
+      "message": "Selhalo odeslání některým příjemcům. Zkontrolujte si síťové připojení."
+   },
+   "fileSizeWarning": {
+      "description": "",
+      "message": "Omlouváme se, vybraný soubor překročil limit velikosti zprávy."
+   },
+   "from": {
+      "description": "Label for the sender of a message",
+      "message": "Od"
+   },
+   "gotIt": {
+      "description": "Label for a button that dismisses a dialog. The user clicks it to confirm that they understand the message in the dialog.",
+      "message": "Rozumím!"
+   },
+   "groupMembers": {
+      "description": "",
+      "message": "Group members"
+   },
+   "identityChanged": {
+      "description": "",
+      "message": "Bezpečnostní číslo k tomuto kontaktu se vám změnilo. Může to znamenat buď to, že se někdo snaží vaši komunikaci odposlouchávat, nebo si kontakt prostě znovu nainstaloval Signal. Možná si budete chtít bezpečnostní číslo níže ověřit."
+   },
+   "identityKeyErrorOnSend": {
+      "description": "Shown when user clicks on a failed recipient in the message detail view after an identity key change",
+      "message": "Your safety number with $name$ has changed. This could either mean that someone is trying to intercept your communication or that $name$ has simply reinstalled Signal. You may wish to verify your saftey number with this contact.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "incomingError": {
+      "description": "",
+      "message": "Chyba při zpracování příchozí zprávy"
+   },
+   "installAndroidInstructions": {
+      "description": "",
+      "message": "Otevřete si Signal na telefonu a přejděte do Nastavení > Propojená zařízení. Stisknutím tlačítka přidejte nové zařízení, pak naskenujte kód nahoře."
+   },
+   "installComputerName": {
+      "description": "Text displayed before the input where the user can enter the name for this device.",
+      "message": "Jméno tohoto počítače bude"
+   },
+   "installConnecting": {
+      "description": "Displayed when waiting for the QR Code",
+      "message": "Připojuje se…"
+   },
+   "installConnectionFailed": {
+      "description": "Displayed when we can't connect to the server.",
+      "message": "Připojení k serveru selhalo."
+   },
+   "installFinalButton": {
+      "description": "The final button for the install process, after the user has entered a name for their device",
+      "message": "To by šlo"
+   },
+   "installFollowUs": {
+      "description": "",
+      "message": "Pro novinky o podpoře více zařízení na iOS \u003Ca $a_params$>nás sledujte\u003C/a>.",
+      "placeholders": {
+         "a_params": {
+            "content": "$1",
+            "example": "href='http://example.com'"
+         }
+      }
+   },
+   "installGeneratingKeys": {
+      "description": "",
+      "message": "Generují se klíče"
+   },
+   "installGetStartedButton": {
+      "description": "",
+      "message": "Začněte"
+   },
+   "installGotIt": {
+      "description": "Button for the user to confirm that they have Signal installed.",
+      "message": "Rozumím"
+   },
+   "installIHaveSignalButton": {
+      "description": "Button for the user to confirm that they have Signal for Android",
+      "message": "Mám aplikaci Signal pro Android"
+   },
+   "installLinkingWithNumber": {
+      "description": "Text displayed before the phone number that the user is in the process of linking with",
+      "message": "Propojuji s"
+   },
+   "installNewSignal": {
+      "description": "When export is complete, a button shows which sends user to Signal Desktop install instructions",
+      "message": "Install new Signal Desktop"
+   },
+   "installSignalLink": {
+      "description": "Prompt the user to install Signal on Android before linking",
+      "message": "Nejprve si nainstalujte \u003Ca $a_params$>Signal\u003C/a> na telefon s Androidem.\u003Cbr /> Propojíme vaše zařízení a budeme synchronizovat zprávy.",
+      "placeholders": {
+         "a_params": {
+            "content": "$1",
+            "example": "href='http://example.com'"
+         }
+      }
+   },
+   "installSignalLinks": {
+      "description": "Prompt the user to install Signal on their phone before linking",
+      "message": "Nejprve si nainstalujte Signal do \u003Ca $play_store$>Androidu\u003C/a> nebo \u003Ca $app_store$>iPhonu\u003C/a>.\u003Cbr />Propojíme vaše zařízení a budeme synchronizovat zprávy.",
+      "placeholders": {
+         "app_store": {
+            "content": "$2",
+            "example": "href='http://example.com'"
+         },
+         "play_store": {
+            "content": "$1",
+            "example": "href='http://example.com'"
+         }
+      }
+   },
+   "installSyncingGroupsAndContacts": {
+      "description": "",
+      "message": "Synchronizují se skupiny a kontakty"
+   },
+   "installTagline": {
+      "description": "Tagline displayed under 'installWelcome' string on the install page",
+      "message": "Soukromí je možné. Signal jej usnadňuje."
+   },
+   "installTooManyDevices": {
+      "description": "",
+      "message": "Promiňte, ale máte už příliš mnoho propojených zařízení. Zkuste některá odstranit."
+   },
+   "installWelcome": {
+      "description": "Welcome title on the install page",
+      "message": "Vítejte v aplikaci Signal Desktop"
+   },
+   "invalidNumberError": {
+      "description": "When a person inputs a number that is invalid",
+      "message": "Neplatné číslo"
+   },
+   "isNotVerified": {
+      "description": "Summary state shown at top of the safety number screen if user has not verified contact.",
+      "message": "You have not verified your safety number with $name$.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "isVerified": {
+      "description": "Summary state shown at top of the safety number screen if user has verified contact.",
+      "message": "You have verified your safety number with $name$.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "keychanged": {
+      "description": "",
+      "message": "Your safety number with $name$ has changed. Click to show.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "John"
+         }
+      }
+   },
+   "lastSynced": {
+      "description": "Label for date and time of last sync operation",
+      "message": "Poslední import"
+   },
+   "learnMore": {
+      "description": "Text that links to a support article on verifying safety numbers",
+      "message": "Dozvědět se více o ověřování bezpečnostních čísel"
+   },
+   "loading": {
+      "description": "Message shown on the loading screen before we've loaded any messages",
+      "message": "Loading..."
+   },
+   "loadingMessages": {
+      "description": "Message shown on the loading screen when we're catching up on the backlog of messages",
+      "message": "Loading messages. $count$ so far...",
+      "placeholders": {
+         "count": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "me": {
+      "description": "The label for yourself when shown in a group member list",
+      "message": "Me"
+   },
+   "mediaMessage": {
+      "description": "Description of a message that has an attachment and no text, displayed in the conversation list as a preview.",
+      "message": "Multimediální zpráva"
+   },
+   "membersNeedingVerification": {
+      "description": "When there are multiple previously-verified group members with safety number changes, a banner will be shown. The list of contacts with safety number changes is shown, and this text introduces that list.",
+      "message": "Your safety numbers with these group members have changed since you last verified. Click a group member to see your new safety number with them."
+   },
+   "messageBelow": {
+      "description": "Alt text for button to take user down to bottom of conversation with a new message out of screen",
+      "message": "New message below"
+   },
+   "messageDetail": {
+      "description": "",
+      "message": "Podrobnosti zprávy"
+   },
+   "messageNotSent": {
+      "description": "Informational label, appears on messages that failed to send",
+      "message": "Zpráva neodeslána."
+   },
+   "messagesBelow": {
+      "description": "Alt text for button to take user down to bottom of conversation with more than one message out of screen",
+      "message": "New messages below"
+   },
+   "migrate": {
+      "description": "Button label to begin migrating this client to Electron",
+      "message": "Migrate"
+   },
+   "migrationDisconnecting": {
+      "description": "Displayed while we wait for pending incoming messages to process",
+      "message": "Disconnecting..."
+   },
+   "migrationWarning": {
+      "description": "Warning notification that this version of the app has been deprecated and the user must migrate",
+      "message": "The Signal Desktop Chrome app has been deprecated. Would you like to migrate to the new Signal Desktop now?"
+   },
+   "multipleNoLongerVerified": {
+      "description": "Shown in conversation banner when more than one group member's safety number has changed, but they were previously verified.",
+      "message": "Your safety numbers with multiple members of this group have changed and are no longer verified. Click to show."
+   },
+   "nameAndMessage": {
+      "description": "Label for setting notifications to display name and message text",
+      "message": "Jméno odesílatele i zprávu"
+   },
+   "nameOnly": {
+      "description": "Label for setting notifications to display sender name only",
+      "message": "Jen jméno odesílatele"
+   },
+   "newContact": {
+      "description": "",
+      "message": "Kliknutím vytvoříte nový kontakt"
+   },
+   "newIdentity": {
+      "description": "Header for a key change dialog",
+      "message": "Nové bezpečnostní číslo"
+   },
+   "newMessage": {
+      "description": "Displayed in notifications for only 1 message",
+      "message": "Nová zpráva"
+   },
+   "newMessages": {
+      "description": "Displayed in notifications for multiple messages",
+      "message": "Nové zprávy"
+   },
+   "newPhoneNumber": {
+      "description": "Placeholder for adding a new number to a contact",
+      "message": "Zadejte telefonní číslo přidat kontakt."
+   },
+   "noLongerVerified": {
+      "description": "Shown in converation banner when user's safety number has changed, but they were previously verified.",
+      "message": "Your safety number with $name$ has changed and is no longer verified. Click to show.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "noNameOrMessage": {
+      "description": "Label for setting notifications to display no name and no message text",
+      "message": "Ani jméno ani zprávu"
+   },
+   "notificationSettingsDialog": {
+      "description": "Explain the purpose of the notification settings",
+      "message": "V oznámeních o nově přijatých zprávách ukázat:"
+   },
+   "notifications": {
+      "description": "Header for notification settings",
+      "message": "Oznámení"
+   },
+   "offline": {
+      "description": "Displayed when the desktop client has no network connection.",
+      "message": "Offline"
+   },
+   "ok": {
+      "description": "",
+      "message": "OK"
+   },
+   "received": {
+      "description": "Label for the time a message was received",
+      "message": "Přijata"
+   },
+   "relink": {
+      "description": "",
+      "message": "Relink"
+   },
+   "reportIssue": {
+      "description": "Link to open the issue tracker",
+      "message": "Nahlásit problém"
+   },
+   "resend": {
+      "description": "",
+      "message": "Znovu odeslat"
+   },
+   "resetSession": {
+      "description": "This is a menu item for resetting the session, using the imperative case, as in a command.",
+      "message": "Resetovat sezení"
+   },
+   "restartSignal": {
+      "description": "Menu item for restarting the program.",
+      "message": "Restartovat Signal"
+   },
+   "scrollDown": {
+      "description": "Alt text for button to take user down to bottom of conversation, shown when user scrolls up",
+      "message": "Scroll to bottom of conversation"
+   },
+   "searchForPeopleOrGroups": {
+      "description": "Placeholder text in the search input",
+      "message": "Hledat…"
+   },
+   "selectAContact": {
+      "description": "",
+      "message": "Vyberte si kontakt nebo skupinu a začněte si povídat."
+   },
+   "selectedLocation": {
+      "description": "Message shown as the export location if we didn't capture the target directory",
+      "message": "your selected location"
+   },
+   "sendAnyway": {
+      "description": "Used on a warning dialog to make it clear that it might be risky to send the message.",
+      "message": "Send Anyway"
+   },
+   "sendMessage": {
+      "description": "Placeholder text in the message entry field",
+      "message": "Poslat zprávu"
+   },
+   "sent": {
+      "description": "Label for the time a message was sent",
+      "message": "Odeslána"
+   },
+   "sessionEnded": {
+      "description": "This is a past tense, informational message. In other words, your secure session has been reset.",
+      "message": "Bezpečné sezení resetováno"
+   },
+   "settings": {
+      "description": "Menu item and header for global settings",
+      "message": "Nastavení"
+   },
+   "showLess": {
+      "description": "Hides the details of a key change",
+      "message": "Skrýt podrobnosti"
+   },
+   "showMembers": {
+      "description": "",
+      "message": "Show members"
+   },
+   "showMore": {
+      "description": "Displays the details of a key change",
+      "message": "Podrobnosti"
+   },
+   "showSafetyNumber": {
+      "description": "",
+      "message": "Show safety number"
+   },
+   "someRecipientsFailed": {
+      "description": "When you send to multiple recipients via a group, and the message went to some recipients but not others.",
+      "message": "Some recipients failed."
+   },
+   "submit": {
+      "description": "",
+      "message": "Odeslat"
+   },
+   "submitDebugLog": {
+      "description": "Menu item and header text for debug log modal, title case.",
+      "message": "Odeslat chybový záznam"
+   },
+   "sync": {
+      "description": "Label for contact and group sync settings",
+      "message": "Kontakty"
+   },
+   "syncExplanation": {
+      "description": "Explanatory text for sync settings",
+      "message": "Importovat všechny skupiny a kontakty Signalu z mobilního zařízení."
+   },
+   "syncFailed": {
+      "description": "Informational text displayed if a sync operation times out.",
+      "message": "Import selhal. Zkontrolujte, zda jsou počítač i telefon připojeny k internetu."
+   },
+   "syncNow": {
+      "description": "Label for a button that syncs contacts and groups from your phone",
+      "message": "Importovat nyní"
+   },
+   "syncing": {
+      "description": "Label for a disabled sync button while sync is in progress.",
+      "message": "Importuje se…"
+   },
+   "theirIdentityUnknown": {
+      "description": "",
+      "message": "S tímto kontaktem jste si ještě nevyměnili žádné zprávy. Bezpečnostní číslo k němu bude dostupné po první zprávě."
+   },
+   "theme": {
+      "description": "Header for theme settings",
+      "message": "Motiv"
+   },
+   "themeAndroidDark": {
+      "description": "Label text for dark Android theme",
+      "message": "Android (tmavý)"
+   },
+   "theyChangedTheTimer": {
+      "description": "Message displayed when someone else changes the message expiration timer in a conversation.",
+      "message": "$name$ nastavil/a časovač na $time$.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         },
+         "time": {
+            "content": "$2",
+            "example": "10m"
+         }
+      }
+   },
+   "timerOption_0_seconds": {
+      "description": "Label for option to turn off message expiration in the timer menu",
+      "message": "vyp."
+   },
+   "timerOption_0_seconds_abbreviated": {
+      "description": "Short format indicating current timer setting in the conversation list snippet",
+      "message": "vyp."
+   },
+   "timerOption_10_seconds": {
+      "description": "Label for a selectable option in the message expiration timer menu",
+      "message": "10 sekund"
+   },
+   "timerOption_10_seconds_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "10 s"
+   },
+   "timerOption_12_hours_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "12 h"
+   },
+   "timerOption_1_day": {
+      "description": "Label for a selectable option in the message expiration timer menu",
+      "message": "1 den"
+   },
+   "timerOption_1_day_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "1 d"
+   },
+   "timerOption_1_hour_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "1 h"
+   },
+   "timerOption_1_minute_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "1 min"
+   },
+   "timerOption_1_week": {
+      "description": "Label for a selectable option in the message expiration timer menu",
+      "message": "1 týden"
+   },
+   "timerOption_1_week_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "1 týd."
+   },
+   "timerOption_30_minutes_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "30 min"
+   },
+   "timerOption_30_seconds": {
+      "description": "Label for a selectable option in the message expiration timer menu",
+      "message": "30 sekund"
+   },
+   "timerOption_30_seconds_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "30 s"
+   },
+   "timerOption_5_minutes_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "5 min"
+   },
+   "timerOption_5_seconds": {
+      "description": "Label for a selectable option in the message expiration timer menu",
+      "message": "5 sekund"
+   },
+   "timerOption_5_seconds_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "5 s"
+   },
+   "timerOption_6_hours_abbreviated": {
+      "description": "Very short format indicating current timer setting in the conversation header",
+      "message": "6 h"
+   },
+   "timerSetTo": {
+      "description": "Displayed in the conversation list when the timer is updated.",
+      "message": "Časovač nastaven na $time$",
+      "placeholders": {
+         "time": {
+            "content": "$1",
+            "example": "1w"
+         }
+      }
+   },
+   "timestampFormat_M": {
+      "description": "Timestamp format string for displaying month and day (but not the year) of a date within the current year, ex: use 'MMM D' for 'Aug 8', or 'D MMM' for '8 Aug'.",
+      "message": "D MMM"
+   },
+   "timestamp_h": {
+      "description": "Brief timestamp for messages sent about one minute ago. Displayed in the conversation list and message bubble.",
+      "message": "1 hodina"
+   },
+   "timestamp_m": {
+      "description": "Brief timestamp for messages sent about one minute ago. Displayed in the conversation list and message bubble.",
+      "message": "1 minuta"
+   },
+   "timestamp_s": {
+      "description": "Brief timestamp for messages sent less than a minute ago. Displayed in the conversation list and message bubble.",
+      "message": "nyní"
+   },
+   "to": {
+      "description": "Label for the receiver of a message",
+      "message": "Komu"
+   },
+   "unblockToSend": {
+      "description": "Brief message shown when trying to message a blocked number",
+      "message": "Pro odeslání zprávy tento kontakt odblokujte."
+   },
+   "unlinked": {
+      "description": "",
+      "message": "Unlinked"
+   },
+   "unlinkedWarning": {
+      "description": "",
+      "message": "Relink Signal Desktop to your mobile device to continue messaging."
+   },
+   "unnamedFile": {
+      "description": "Hover text for attachment filenames",
+      "message": "Unnamed File"
+   },
+   "unreadMessage": {
+      "description": "Text for unread message separator, just one message",
+      "message": "1 Unread Message"
+   },
+   "unreadMessages": {
+      "description": "Text for unread message separator, with count",
+      "message": "$count$ Unread Messages",
+      "placeholders": {
+         "count": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "unregisteredUser": {
+      "description": "Error message displayed when sending to an unregistered user.",
+      "message": "Číslo není registrováno"
+   },
+   "unsupportedAttachment": {
+      "description": "Displayed for incoming unsupported attachment",
+      "message": "Nepodporovaný typ přílohy. Klikněte pro uložení."
+   },
+   "unsupportedFileType": {
+      "description": "Displayed for outgoing unsupported attachment",
+      "message": "Nepodporovaný typ souboru"
+   },
+   "unverify": {
+      "description": "",
+      "message": "Mark as not verified"
+   },
+   "upgrade": {
+      "description": "Label text for button to upgrade the app to the latest version",
+      "message": "Aktualizovat"
+   },
+   "upgradingDatabase": {
+      "description": "Message shown on the loading screen when we're changing database structure on first run of a new version",
+      "message": "Upgrading database. This may take some time..."
+   },
+   "verified": {
+      "description": "",
+      "message": "Verified"
+   },
+   "verify": {
+      "description": "",
+      "message": "Mark as verified"
+   },
+   "verifyContact": {
+      "description": "Use $tag_start$ and $tag_end$ to wrap the word or phrase in this sentence that the user should click on in order to navigate to the verification screen. These placeholders will be replaced with appropriate HTML code.",
+      "message": "Mohli byste si chtít u tohoto kontaktu $tag_start$ ověřit $tag_end$ bezpečnostní číslo.",
+      "placeholders": {
+         "tag_end": {
+            "content": "\u003C/a>"
+         },
+         "tag_start": {
+            "content": "\u003Ca class='verify' href='#'>"
+         }
+      }
+   },
+   "verifyHelp": {
+      "description": "",
+      "message": "If you wish to verify the security of your end-to-end encryption with $name$, compare the numbers above with the numbers on their device.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "John"
+         }
+      }
+   },
+   "view": {
+      "description": "Used as a label on a button allowing user to see more information",
+      "message": "View"
+   },
+   "voiceMessage": {
+      "description": "Name for a voice message attachment",
+      "message": "Voice Message"
+   },
+   "welcomeToSignal": {
+      "description": "",
+      "message": "Vítejte v Signalu"
+   },
+   "youChangedTheTimer": {
+      "description": "Message displayed when you change the message expiration timer in a conversation.",
+      "message": "Nastavili jste časovač na $time$.",
+      "placeholders": {
+         "time": {
+            "content": "$1",
+            "example": "10m"
+         }
+      }
+   },
+   "youLeftTheGroup": {
+      "description": "Displayed when a user can't send a message because they have left the group",
+      "message": "You left the group"
+   },
+   "youMarkedAsNotVerified": {
+      "description": "Shown in the conversation history when the user marks a contact as not verified, whether on the safety number screen or by dismissing a banner or dialog.",
+      "message": "You marked your safety number with $name$ as unverified.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "youMarkedAsNotVerifiedOtherDevice": {
+      "description": "Shown in the conversation history when we discover that the user marked a contact as not verified on another device.",
+      "message": "You marked your safety number with $name$ as not verified from another device.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "youMarkedAsVerified": {
+      "description": "Shown in the conversation history when the user marks a contact as verified.",
+      "message": "You marked your safety number with $name$ as verified.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "youMarkedAsVerifiedOtherDevice": {
+      "description": "Shown in the conversation history when we discover that the user marked a contact as verified on another device.",
+      "message": "You marked your safety number with $name$ as verified from another device.",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "Bob"
+         }
+      }
+   },
+   "yourSafetyNumberWith": {
+      "description": "Heading for safety number view",
+      "message": "Your safety number with $name$:",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "John"
+         }
+      }
+   }
+}

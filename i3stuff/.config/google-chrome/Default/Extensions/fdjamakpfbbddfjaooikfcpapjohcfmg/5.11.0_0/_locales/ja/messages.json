@@ -1,0 +1,10 @@
+{
+   "ExtensionDescription": {
+      "description": "Description of the extension on chrome_extension page below extension title",
+      "message": "もうパスワードを忘れない。ブラウズ中にパスワードを安全に保管します。自動入力して、お気に入りのウェブサイトに瞬時にログインしましょう。"
+   },
+   "ExtensionName": {
+      "description": "Name of the extension on chrome_extension page and on Chrome Web Store page",
+      "message": "Dashlane パスワードマネージャー"
+   }
+}

@@ -1,0 +1,33 @@
+{
+   "background": {
+      "scripts": [ "vendor/require.min.js", "core/background/requirejs-config.js", "core/background/main.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "/icons/page_action_unsupported_19.png",
+         "38": "/icons/page_action_unsupported_38.png"
+      },
+      "default_popup": "/popups/unsupported.html",
+      "default_title": "__MSG_pageActionUnsupported__"
+   },
+   "content_scripts": [ {
+      "js": [ "connectors/dummy.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "homepage_url": "https://add0n.com/lastfm-scrobbler.html",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDPvRk2TRWcLqM9RsKXmxBHM6hFBHYhUUQfffv/RpRVum6le1VvH5Ld9oRGG5rrBaAt7DDs6IsYKk7TzZoaqq/1ajW+dZsxtvTVZ9ylnwmBZ1yNbe1vYz/2QYthS1lmVhDheLzZwN19eQ0FKkSlejeRZ4+eMcqLrcuf5ReKEDpCXwIDAQAB",
+   "manifest_version": 2,
+   "name": "Last.fm Scrobbler",
+   "options_page": "options/options.html",
+   "permissions": [ "contextMenus", "tabs", "notifications", "storage", "http://*/", "https://*/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.3.5",
+   "web_accessible_resources": [ "icons/icon128.png", "connectors/soundcloud-dom-inject.js", "connectors/vk-dom-inject.js" ]
+}
