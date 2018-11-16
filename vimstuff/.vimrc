@@ -30,6 +30,17 @@ hi Comment ctermfg=239
 set cursorline
 
 
+" Syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_python_exec = 'python3'
+
+
 " Latex-suite
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'
@@ -59,7 +70,7 @@ nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 " hi Normal guibg=#32322f ctermbg=236
 " hi NonText guibg=#32322f ctermbg=236
 hi ColorColumn guibg=#2a2d27 ctermbg=0
-let &colorcolumn="79,".join(range(120,999),",")
+let &colorcolumn="79,99,".join(range(120,999),",")
 
 " set tab configuration
 set smartindent
