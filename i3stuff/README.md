@@ -11,7 +11,6 @@ curl http://kumarcode.com/resources/fontawesome-webfont.ttf --output ~/.local/sh
 curl http://kumarcode.com/resources/AIcons.ttf --output ~/.local/share/fonts/
 curl http://kumarcode.com/resources/icons.ttf --output ~/.local/share/fonts/
 fc-cache -fv
-curl  --output ~/.local/share/fonts/
 ```
 * Install the Ubunto font too from http://font.ubuntu.com/
 * `cp -r .vim/* ~/.vim && cp .vimrc ~/.vimrc`
