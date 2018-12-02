@@ -27,3 +27,8 @@ curl  --output ~/.local/share/fonts/
 ## Install i3blocks' scripts dependencies
 * `yaourt -S light-git`
 * `yaourt -S acpi`
+
+## Tricks
+* Use `sudo wifi-menu` to automatically generate `netctl` config files.
+  * NetworkManager might mess things up so should be stopped: `sudo systemctl stop NetworkManager.service`
+  * `sudo netctl start <generated config file>`
