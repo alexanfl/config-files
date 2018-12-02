@@ -12,6 +12,8 @@ Steps to make i3 etc. work:
   in .config/i3blocks.
 * Check if i3blocks scripts are located in /usr/bin or /usr/share, 
   and change .config/i3blocks/config accordingly.
+* yaourt -S light-git
+* yaourt -S acpi
 
 * Create an app password for Gmail make the .em-pw file.
 
