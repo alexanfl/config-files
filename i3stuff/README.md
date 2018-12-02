@@ -6,14 +6,14 @@
 * `cp .Xresources .Xresources && xrdb -merge ~/.Xresources && cp .zshrc ~/.zshrc && cp .zprofile ~/.zprofile && cp lock /usr/bin/`
 * Install fonts (http://kumarcode.com/Colorful-i3/ and http://font.ubuntu.com/)
 * `mkdir .vim && cp .vim/* .vim && cp .vimrc ~/.vimrc`
-* `mv ~/.config/i3/toggle-lang /usr/bin/ && mv ~/.config/i3/toggle-opac /usr/bin/` 
+* `sudo mv ~/.config/i3/toggle-lang /usr/bin/ && mv ~/.config/i3/toggle-opac /usr/bin/` 
 * Check network interfaces with `ip link`,
   and change ethernet script and wifi-instance (i3blocks config) 
   in .config/i3blocks.
 * Check if i3blocks scripts are located in `/usr/bin` or `/usr/share`, 
   and change `.config/i3blocks/config` accordingly.
 * Create an app password for Gmail make the `.em-pw` file.
-* `cp toggle-email ~/usr/bin/`
+* `sudo cp toggle-email ~/usr/bin/`
 
 ## Install i3blocks' scripts dependencies
 * `yaourt -S light-git`
