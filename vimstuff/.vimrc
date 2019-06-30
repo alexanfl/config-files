@@ -2,6 +2,9 @@
 set nocompatible
 filetype off
 
+" Clipboard in OSX
+set clipboard=unnamed
+
 " Pathogen
 execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
@@ -22,6 +25,12 @@ set background=dark
 " Line numbering
 set nu
 
+" fzf plugin
+set rtp+=/usr/local/opt/fzf
+
+" Tilde as operator
+set tildeop
+
 " Line color highlight
 hi CursorLine cterm=NONE ctermbg=233 ctermfg=NONE guibg=NONE guifg=NONE
 hi CursorLineNr cterm=NONE ctermbg=NONE ctermfg=252 guibg=NONE guifg=NONE
@@ -39,7 +48,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = 'python3'
-
+let g:zig_fmt_autosave = 1
 
 " Latex-suite
 let g:Tex_DefaultTargetFormat = 'pdf'
