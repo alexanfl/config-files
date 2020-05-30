@@ -18,7 +18,8 @@ fc-cache -fv
 * Check network interfaces with `ip link`,
   and change ethernet script and wifi-instance (i3blocks config) 
   in .config/i3blocks.
-* Check if i3blocks scripts are located in `/usr/bin` or `/usr/share`, 
+* `yaourt -S i3blocks-contrib` and check if scripts are located in `/usr/lib`
+  (or `/usr/bin` or `/usr/share`), 
   and change `.config/i3blocks/config` accordingly.
 * Create an app password for Gmail make the `.em-pw` file.
 * `sudo cp toggle-email ~/usr/bin/`
