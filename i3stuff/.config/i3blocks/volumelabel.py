@@ -10,15 +10,15 @@ else:
     b = output.find("]")
     vol = int(output[a+1:b-1])
 
-def getsymb(vol):
+def getfmt(vol):
     if vol == -1:
-        return "#ff0000", "\uf026\uf00d"
+        return "#e89393", "\uf026\uf00d", ""
     if vol == 0:
-        return "#ffffff", "\uf026"
+        return "#666666", "\uf026", f" {vol} %"
     if vol < 50:
-        return "#ffffff", "\uf027"
+        return "#666666", "\uf027", f" {vol} %"
     if vol <= 100:
-        return "#ffffff", "\uf028"
+        return "#666666", "\uf028", f" {vol} %"
 
 
-print('<span font="FontAwesome" color="%s">%s</span>' % (getsymb(vol)))
+print('<span font="FontAwesome" color="%s">%s%s</span>' % getfmt(vol))
