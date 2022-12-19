@@ -4,7 +4,7 @@ import sys
 
 interface = sys.argv[1]
 
-cmd = f"cat /sys/class/net/{device}/operstate".split()
+cmd = f"cat /sys/class/net/{interface}/operstate".split()
 
 output = str(subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0])
 
