@@ -1,5 +1,10 @@
 import subprocess
-cmd = "cat /sys/class/net/enp0s31f6/operstate".split()
+import sys
+
+
+interface = sys.argv[1]
+
+cmd = f"cat /sys/class/net/{device}/operstate".split()
 
 output = str(subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0])
 
