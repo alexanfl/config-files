@@ -12,7 +12,7 @@ def get_interface():
             continue
 
         if 'ethernet' in line:
-            return vals[-1]
+            return vals[-1] if vals[-1] != '--' else None
 
 
 interface = get_interface() if len(sys.argv) < 2 else sys.argv[1]
@@ -20,8 +20,10 @@ interface = get_interface() if len(sys.argv) < 2 else sys.argv[1]
 
 cmd = f"cat /sys/class/net/{interface}/operstate".split()
 
-output = str(subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0])
-
+if interface:
+    output = str(subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0])
+else:
+    output = 'down'
 
 
 if 'down' in output:
