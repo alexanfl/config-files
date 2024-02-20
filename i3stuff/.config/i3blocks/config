@@ -4,11 +4,27 @@ align=center
 separator=false
 separator_block_width=7
 
-# output:  375 GiB / 435 GiB (10%)
+[pomodoro]
+command=if [ $button ] && [[ $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro toggle && /usr/bin/i3-gnome-pomodoro status; elif [ $button ] && [[ ! $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro start && /usr/bin/i3-gnome-pomodoro status; else { A=$(/usr/bin/i3-gnome-pomodoro status); [[ $A ]] && echo "🍅 $A" || echo "🍅 Pomodoro"; }; fi
+interval=1
+markup=pango
+color=#999999
+
+[SEPARATOR]
+color=#666666
+[memory]
+command=~/.local/share/i3blocks-modules/memory -f " {used} {uunit}iB / {total} {tunit}iB ({pused} %)" -tw '{pfree}' '<' 50 -ti '{pfree}' '<' 35 -tc '{pfree}' '<' 15
+interval=1
+markup=pango
+
+[SEPARATOR]
+color=#666666
+
+# output:  used GiB / total GiB (10%)
 # show 'warn color' when disk space is less than 20%
 # show 'crit color' when disk space is less than 10%
 [disk]
-command=~/.local/share/i3blocks-modules/disk -f " {free} {funit}iB / {total} {tunit}iB ({pused}%)" -tc '{pfree}' '<' 20 -tc '{pfree}' '<' 10
+command=~/.local/share/i3blocks-modules/disk -f " {used} {uunit}iB / {total} {tunit}iB ({pused}%)" -ti '{pfree}' '<' 35 -tc '{pfree}' '<' 15
 instance=/
 interval=60
 markup=pango
@@ -20,14 +36,17 @@ color=#666666
 # output charging:     ⚡ 31% (00:23)
 # output full:          100% (08:32)
 # output full with ac: ⚡ 100%
+# output full with ac (alt.): charge plug
 # shows 'good color' when fully charged
 # shows 'warn color' when remaining percentage is below 30%
 # shows 'crit color' when remaining percentage is below 10%
 # shows different icons depending on remaining percent
 # shows different icon for charging and discharging
 [battery]
-command=~/.local/share/i3blocks-modules/battery -fe '{percent}' '<' 90 ' {percent}% ({time})' -fe '{percent}' '<' 75 ' {percent}% ({time})' -fe '{percent}' '<' 60 ' {percent}% ({time})' -fe '{percent}' '<' 35 ' {percent}% ({time})' -fe '{percent}' '<' 5 ' {percent}% ({time})' -fe '{status}' '=' '^charging' '⚡ {percent}% ({time})' -fe '{status}' '=' 'full' ' {percent}%' -tg '{status}' '=' 'full' -tg '{percent}' '=' 100 -ti '{status}' '=' '^charging' -tw '{percent}' '<' 30 -tc '{percent}' '<' 5
-instance=Battery 0
+color=#666666
+command=python ~/.config/i3blocks/battery.py
+#command=~/.local/share/i3blocks-modules/battery -fe '{percent}' '<' 90 ' {percent}% ({time})' -fe '{percent}' '<' 75 ' {percent}% ({time})' -fe '{percent}' '<' 60 ' {percent}% ({time})' -fe '{percent}' '<' 35 ' {percent}% ({time})' -fe '{percent}' '<' 5 ' {percent}% ({time})' -fe '{status}' '=' '^charging' '⚡ {percent}% ({time})' -fe '{status}' '=' 'full' ' {percent}% ' -fe '{status}' '=' 'not' '⚡ 100%' -tg '{status}' '=' 'full' -tg '{percent}' '=' 100 -ti '{status}' '=' '^charging' -tw '{percent}' '<' 30 -tc '{percent}' '<' 5
+#instance=Battery 0
 interval=60
 markup=pango
 
@@ -63,7 +82,6 @@ color=#666666
 
 [volume]
 command=python ~/.config/i3blocks/volumelabel.py
-label= 
 markup=pango
 interval=1
 
@@ -92,3 +110,4 @@ color=#666666
 command=setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}'
 interval=1
 color=#666666
+
