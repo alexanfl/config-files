@@ -12,7 +12,7 @@ status = check_output(['acpi'], universal_newlines=True)
 
 if not status:
     # stands for no battery found
-    fulltext = "<span color='red'><span font='FontAwesome'>\uf00d \uf244</span></span>"
+    fulltext = "<span font='mononoki nf bold 'color='red'>\uf00d \uf244</span>"
     percentleft = 100
 else:
     state = status.split(": ")[1].split(", ")[0]
@@ -20,10 +20,10 @@ else:
     percentleft = int(commasplitstatus[1].strip("%"))
 
     # stands for charging
-    FA_LIGHTNING = "<span color='yellow'><span font='FontAwesome'>\uf0e7</span></span>"
+    FA_LIGHTNING = "<span font='mononoki nf bold 'color='yellow'>\uf0e7</span>"
 
     # stands for plugged in
-    FA_PLUG = "<span font='FontAwesome'>\uf1e6</span>"
+    FA_PLUG = "<span font='mononoki nf bold'>\uf1e6</span>"
 
     fulltext = ""
     timeleft = ""
@@ -47,34 +47,22 @@ else:
 
     elif state == "Full":
         symb = ""
-        fulltext = FA_PLUG + " "
+        fulltext = FA_PLUG
 
     elif state == "Unknown":
         symb = ""
-        fulltext = "<span font='FontAwesome'>\uf128</span> "
+        fulltext = "<span font='mononoki nf bold'>\uf128</span> "
     else:
         symb = ""
-        fulltext = FA_LIGHTNING + " " + FA_PLUG + " "
+        fulltext = f"{FA_LIGHTNING}{FA_PLUG}"
 
     def color(percent):
         if percent < 10:
-            if state == "Discharging":
-                bashCommand = "notify-send -t 100 Battery<10%! Plug in charger now!"
-                process = Popen(bashCommand.split(), stdout=PIPE)
-                output, error = process.communicate()
             # exit code 33 will turn background red
             return "#FF0000"
         if percent < 20:
-            if state == "Discharging":
-                bashCommand = "notify-send -t 100 Battery<20%! Plug in charger."
-                process = Popen(bashCommand.split(), stdout=PIPE)
-                output, error = process.communicate()
             return "#FF3300"
         if percent < 30:
-            if state == "Discharging":
-                bashCommand = "notify-send -t 100 Battery<30%"
-                process = Popen(bashCommand.split(), stdout=PIPE)
-                output, error = process.communicate()
             return "#FF6600"
         if percent < 40:
             return "#FF9900"
@@ -83,18 +71,30 @@ else:
         if percent < 60:
             return "#FFFF00"
         if percent < 70:
-            return "#FFFF33"
+            return "#FFFF63"
         if percent < 80:
-            return "#FFFF66"
-        return "#FFFFFF"
+            return "#FFFF93"
+        return "#666666"
 
-    form =  '<span font="FontAwesome" color="{}">{} {}%</span>'
+    form = '<span font="mononoki nf bold" color="{}">{}  {}%</span>'
 
+    bash_command = None
+    if state == "Discharging":
+        if percentleft < 10:
+            bash_command = ["notify-send", "-w", "-u", "critical", "Warning: Battery<10%! Plug in charger now!"]
+        elif percentleft < 20:
+            bash_command = ["notify-send", "-w", "-u", "critical", "Warning: Battery<20%! Plug in charger."]
+        elif percentleft < 30:
+            bash_command = ["notify-send", "-w", "-u", "normal", "Warning: Battery<30%"]
+
+    if bash_command:
+        process = Popen(bash_command, stdout=PIPE)
+        # .communicate() will block the execution until notification has been clicked on:
+        #output, error = process.communicate()
 
     fulltext += form.format(color(percentleft), symb, percentleft)
     fulltext += timeleft
 
-print(fulltext)
 print(fulltext)
 # if percentleft < 10:
 #     exit(33)
