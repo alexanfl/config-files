@@ -12,8 +12,9 @@ color=#999999
 
 [SEPARATOR]
 color=#666666
+
 [memory]
-command=~/.local/share/i3blocks-modules/memory -f " {used} {uunit}iB / {total} {tunit}iB ({pused} %)" -tw '{pfree}' '<' 50 -ti '{pfree}' '<' 35 -tc '{pfree}' '<' 15
+command=~/.local/share/i3blocks-modules/memory -f " {used} {uunit}iB / {total} {tunit}iB ({pused} %)" -tg '{pfree}' '<' 70 -ti '{pfree}' '<' 50 -tw '{pfree}' '<' 35 -tc '{pfree}' '<' 20
 interval=1
 markup=pango
 
