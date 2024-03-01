@@ -25,12 +25,12 @@ for line in output.split('\n'):
 
         if signal > 70:
             color = color_good
-        elif signal > 40:
+        elif signal > 50:
+            color = color_info
+        elif signal > 30:
             color = color_warn
-        elif signal > 25:
-            color = color_info
         else:
-            color = color_info
+            color = color_crit
             
         fmt = FORMAT % (color, ssid, signal, speed)
         print(fmt)
