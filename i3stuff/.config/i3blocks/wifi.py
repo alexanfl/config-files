@@ -5,9 +5,10 @@ import re
 icon = ''
 color_def="#666666"   # gray
 color_good="#88b090"  # green
-color_warn="#ccdc90"  # yellow
+color_warn="#ccdc90"  # orange
 color_crit="#e89393"  # red
-color_info="#fce94f"  # bright yellow
+color_info="#ded16d"  # yellow
+
 
 FORMAT = f'<span color="%s">{icon} %s (%s %%) [%s]</span>'
 cmd = ['nmcli', 'dev', 'wifi']

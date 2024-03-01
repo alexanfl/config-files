@@ -9,6 +9,13 @@ from subprocess import check_output, Popen, PIPE
 
 status = check_output(['acpi'], universal_newlines=True)
 
+color_def="#666666"   # gray
+color_good="#88b090"  # green
+color_warn="#ccdc90"  # orange
+color_crit="#e89393"  # red
+color_info="#ded16d"  # yellow
+color_red="#ff0000"   # red
+
 
 if not status:
     # stands for no battery found
@@ -59,22 +66,22 @@ else:
     def color(percent):
         if percent < 10:
             # exit code 33 will turn background red
-            return "#FF0000"
+            return color_red
         if percent < 20:
-            return "#FF3300"
+            return color_crit
         if percent < 30:
-            return "#FF6600"
+            return color_warn
         if percent < 40:
-            return "#FF9900"
+            return color_warn
         if percent < 50:
-            return "#FFCC00"
+            return color_info
         if percent < 60:
-            return "#FFFF00"
+            return color_info
         if percent < 70:
-            return "#FFFF63"
+            return color_info
         if percent < 80:
-            return "#FFFF93"
-        return "#666666"
+            return color_good
+        return color_def
 
     form = '<span font="mononoki nf bold" color="{}">{}  {}%</span>'
 
