@@ -5,7 +5,7 @@ import re
 icon = ''
 color_def="#666666"   # gray
 color_good="#88b090"  # green
-color_warn="#ccdc90"  # orange
+color_warn="#deab6d"  # orange
 color_crit="#e89393"  # red
 color_info="#ded16d"  # yellow
 
