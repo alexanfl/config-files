@@ -14,11 +14,15 @@ def getfmt(vol):
     if vol == -1:
         return "#e89393", "\uf026\uf00d", ""
     if vol == 0:
-        return "#666666", "\uf026", f" {vol} %"
-    if vol < 50:
+        return "#e89393", "\uf026", f" {vol} %"
+    if vol < 30:
         return "#666666", "\uf027", f" {vol} %"
+    if vol < 70:
+        return "#88b090", "\uf027", f" {vol} %"
+    if vol < 85:
+        return "#ded16d", "\uf028", f" {vol} %"
     if vol <= 100:
-        return "#666666", "\uf028", f" {vol} %"
+        return "#deab6d", "\uf028", f" {vol} %"
 
 
 print('<span font="FontAwesome" color="%s">%s%s</span>' % getfmt(vol))
