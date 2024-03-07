@@ -8,7 +8,7 @@ separator_block_width=7
 command=if [ $button ] && [[ $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro toggle && /usr/bin/i3-gnome-pomodoro status; elif [ $button ] && [[ ! $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro start && /usr/bin/i3-gnome-pomodoro status; else { A=$(/usr/bin/i3-gnome-pomodoro status); [[ $A ]] && echo "🍅 $A" || echo "🍅 Pomodoro"; }; fi
 interval=1
 markup=pango
-color=#999999
+color=#666666
 
 [SEPARATOR]
 color=#666666
@@ -62,8 +62,10 @@ command=python ~/.config/i3blocks/wifi.py
 interval=2
 markup=pango
 
+[SEPARATOR]
+color=#666666
+
 [ethernet]
-label=/ 
 command=python ~/.config/i3blocks/ethernet.py
 markup=pango
 interval=10
