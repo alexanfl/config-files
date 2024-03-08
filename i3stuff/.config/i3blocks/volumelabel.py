@@ -12,7 +12,7 @@ else:
 
 def getfmt(vol):
     if vol == -1:
-        return "#e89393", "\uf026\uf00d", ""
+        return "#e89393", "\uf026✘", ""
     if vol == 0:
         return "#e89393", "\uf026", f" {vol} %"
     if vol < 30:
