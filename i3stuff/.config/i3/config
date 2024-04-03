@@ -17,6 +17,9 @@ font pango:mononoki nf bold 12
 focus_on_window_activation smart
 
 Assign [class="^teams-for-linux$"] $ws10
+Assign [class="^Chromium-browser$"] $ws3
+Assign [class="^Code$"] $ws1
+Assign [class="^org.remmina.Remmina$"] $ws5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
