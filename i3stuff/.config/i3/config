@@ -13,6 +13,9 @@ set $mod Mod1
 
 font pango:mononoki nf bold 12
 
+no_focus [all]
+focus_on_window_activation none
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
