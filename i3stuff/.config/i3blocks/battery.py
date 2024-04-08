@@ -9,7 +9,7 @@ from subprocess import check_output, Popen, PIPE
 
 status = check_output(['acpi'], universal_newlines=True)
 
-color_def="#666666"   # gray
+color_def="#bbbbbb"   # gray
 color_good="#88b090"  # green
 color_warn="#ccdc90"  # orange
 color_crit="#e89393"  # red

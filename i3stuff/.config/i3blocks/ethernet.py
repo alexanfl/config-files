@@ -27,7 +27,7 @@ else:
 
 
 if 'down' in output:
-    print('<span color="#e89393" font="mononoki nf bold">↯🖧</span>')
+    print('<span color="#e89393" font="mononoki nf bold">✘🖧</span>')
 elif 'up' in output:
     print('<span color="#88b090" font="mononoki nf bold">✔🖧</span>')
 else:

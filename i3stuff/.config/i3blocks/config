@@ -8,10 +8,10 @@ separator_block_width=7
 command=if [ $button ] && [[ $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro toggle && /usr/bin/i3-gnome-pomodoro status; elif [ $button ] && [[ ! $(/usr/bin/i3-gnome-pomodoro status) ]]; then /usr/bin/i3-gnome-pomodoro start && /usr/bin/i3-gnome-pomodoro status; else { A=$(/usr/bin/i3-gnome-pomodoro status); [[ $A ]] && echo "🍅 $A" || echo "🍅 Pomodoro"; }; fi
 interval=1
 markup=pango
-color=#666666
+color=#bbbbbb
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 [memory]
 command=~/.local/share/i3blocks-modules/memory -f " {used} {uunit}iB / {total} {tunit}iB ({pused} %)" -tg '{pfree}' '<' 70 -ti '{pfree}' '<' 50 -tw '{pfree}' '<' 35 -tc '{pfree}' '<' 20
@@ -19,7 +19,7 @@ interval=1
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # output:  used GiB / total GiB (10%)
 # show 'warn color' when disk space is less than 20%
@@ -31,7 +31,7 @@ interval=60
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # output discharging:   31% (01:50)
 # output charging:     ⚡ 31% (00:23)
@@ -44,7 +44,7 @@ color=#666666
 # shows different icons depending on remaining percent
 # shows different icon for charging and discharging
 [battery]
-color=#666666
+color=#bbbbbb
 command=python ~/.config/i3blocks/battery.py
 #command=~/.local/share/i3blocks-modules/battery -fe '{percent}' '<' 90 ' {percent}% ({time})' -fe '{percent}' '<' 75 ' {percent}% ({time})' -fe '{percent}' '<' 60 ' {percent}% ({time})' -fe '{percent}' '<' 35 ' {percent}% ({time})' -fe '{percent}' '<' 5 ' {percent}% ({time})' -fe '{status}' '=' '^charging' '⚡ {percent}% ({time})' -fe '{status}' '=' 'full' ' {percent}% ' -fe '{status}' '=' 'not' '⚡ 100%' -tg '{status}' '=' 'full' -tg '{percent}' '=' 100 -ti '{status}' '=' '^charging' -tw '{percent}' '<' 30 -tc '{percent}' '<' 5
 #instance=Battery 0
@@ -52,7 +52,7 @@ interval=60
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # Note: Set instance to your wifi interface
 # Note: interval specifies how often the module should be updated (in seconds)
@@ -63,7 +63,7 @@ interval=2
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 [ethernet]
 command=python ~/.config/i3blocks/ethernet.py
@@ -71,7 +71,7 @@ markup=pango
 interval=10
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # output: ☼ 100%
 [backlight]
@@ -81,7 +81,7 @@ interval=2
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 [volume]
 command=python ~/.config/i3blocks/volumelabel.py
@@ -89,7 +89,7 @@ markup=pango
 interval=1
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # output:  Sun, 05.03.2017
 [date]
@@ -98,7 +98,7 @@ interval=60
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 # output:  14:36
 [time]
@@ -107,10 +107,10 @@ interval=5
 markup=pango
 
 [SEPARATOR]
-color=#666666
+color=#bbbbbb
 
 [keyboard layout]
 command=setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}'
 interval=1
-color=#666666
+color=#bbbbbb
 
