@@ -255,7 +255,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Automatically lock screen with blur (see the file /bin/lock)
-exec_always xautolock -time 1 -corners -+00 -cornerdelay 1 -locker 'lock'
+exec_always xautolock -time 1 -corners -+00 -cornerdelay 3 -locker 'lock'
 
 exec --no-startup-id wallpaper
 
