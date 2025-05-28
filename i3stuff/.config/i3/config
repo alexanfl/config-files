@@ -17,9 +17,12 @@ font pango:mononoki nf bold 12
 focus_on_window_activation smart
 
 Assign [class="^teams-for-linux$"] $ws10
-Assign [class="^Chromium-browser$"] $ws3
+Assign [class="^Chromium-browser$"] $ws7
+Assign [class="^Microsoft-edge.*$"] $ws3
+Assign [class="^org.mozilla.firefox$"] $ws7
 Assign [class="^Code$"] $ws1
-Assign [class="^org.remmina.Remmina$"] $ws5
+Assign [class="^org.remmina.Remmina$"] $ws9
+Assign [class="^obsidian$"] $ws5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -34,12 +37,14 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- lock --nofork
 
 exec --no-startup-id xrandr --output DP-1-1-5 --primary --auto --left-of eDP-1
+exec --no-startup-id xrandr --output DP-1-3 --primary --auto --left-of eDP-1
 exec --no-startup-id xrandr --output DP-1-1-5 --primary --mode 5120x2160 --left-of eDP-1
 exec --no-startup-id xrandr --output DP-1 --primary --auto --left-of eDP-1
-exec --no-startup-id xrandr --output DP-1-3 --primary --auto --right-of eDP-1
+exec --no-startup-id xrandr --output HDMI-1 --primary --auto --left-of eDP-1
 
 # Add GTK theme from Gnome
 exec --no-startup-id /usr/lib/gsd-xsettings
@@ -250,7 +255,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Automatically lock screen with blur (see the file /bin/lock)
-exec --no-startup-id i3-msg 'exec xautolock -time 15 -locker lock'
+exec_always xautolock -time 1 -corners -+00 -cornerdelay 1 -locker 'lock'
 
 exec --no-startup-id wallpaper
 
