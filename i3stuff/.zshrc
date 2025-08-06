@@ -3,14 +3,13 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 # Use nvim as default editor
 export EDITOR=nvim
 
 # Set definition of characters that are not word separators, but part of a word 
 WORDCHARS='-.[]~=&;!#$%^(){}<>'
 autoload -U select-word-style
-select-word-style normal
+#select-word-style normal
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -74,12 +73,15 @@ ZSH_THEME="spaceship" #"headline" #"sunaku" "zhann" "kennethreitz" "kolo" "half-
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf-tab)
+plugins=(git fzf-tab) # vi-mode spaceship-vi-mode)
+# eval spaceship_vi_mode_enable
 
 source $ZSH/oh-my-zsh.sh
 
 alias f='nvim "$(fzf)"'
 alias vim='nvim'
+alias v='nvim'
+alias gp='git -P'
 
 # User configuration
 
@@ -135,3 +137,4 @@ unset __conda_setup
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+eval "$(dircolors -b ~/.dircolors)"
