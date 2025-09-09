@@ -1,0 +1,159 @@
+### Variables
+set $mod Mod1
+set $term alacritty
+set $menu wofi --show drun --prompt "Run:"
+
+### Output
+# output * bg ~/Pictures/wallpapers/default.jpg fill
+
+### Keybindings
+# Start terminal
+bindsym Mod4+Return exec $term
+
+# Start wofi (dmenu replacement)
+bindsym $mod+Shift+d exec $menu
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start program launcher
+bindsym $mod+d exec $menu
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Split orientation
+bindsym $mod+v split v
+bindsym $mod+b split h
+
+# Fullscreen toggle
+bindsym $mod+f fullscreen
+
+# Floating toggle
+bindsym $mod+Shift+space floating toggle
+
+# Workspaces (1–9)
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+10 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Default workspace location
+workspace 1 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace 3 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace 5 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace 7 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace 9 output DP-1 DP-2 HDMI-1 DP-1-3
+
+workspace 2 output eDP-1
+workspace 4 output eDP-1
+workspace 6 output eDP-1
+workspace 8 output eDP-1
+workspace 0 output eDP-1
+
+# Apps moved to default workspaces
+assign [app_id="microsoft-edge"] → "1: Code"
+assign [app_id="microsoft-edge"] → "3: Browser"
+
+### Tools
+# Screenshot (area to clipboard)
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
+# Screenshot (full to file)
+bindsym Shift+Print exec grim ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png
+
+# Clipboard manager (launch with menu)
+bindsym $mod+c exec clipman pick -t wofi
+
+# Lock screen
+#bindsym $mod+Shift+o exec swaylock -f -c 000000
+bindsym Mod4+l exec swaylock-random-image
+
+# Reload sway
+bindsym $mod+Shift+c reload
+# Exit sway
+bindsym $mod+Shift+e exec "swaymsg exit"
+
+### Startup Applications
+exec_always mako
+exec waybar
+exec wallpaper
+exec_always clipman restore
+exec_always swaybg -i ~/Pictures/wallpapers/default.jpg -m fill
+
+### Idle Management
+exec_always swayidle -w \
+    timeout 300 'swaylock-random-image -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock-random-image -f -c 000000'
+
+### Input config
+# Touchpad
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+}
+
+# Keyboard layout
+input * {
+    xkb_layout us
+}
+
+
+default_border pixel 2
+default_floating_border pixel 1
+smart_borders on
+hide_edge_borders --i3 smart
+
+gaps horizontal 10
+gaps vertical 10
+gaps top 10
+gaps right 10
+gaps bottom 10
+gaps left 10
+
+
+input type:touchpad {
+    natural_scroll disabled
+}
+
+
