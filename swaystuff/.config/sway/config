@@ -1,10 +1,20 @@
 ### Variables
-set $mod Mod1
+set $mod Mod4
 set $term alacritty
 set $menu wofi --show drun --prompt "Run:"
 
-### Output
-# output * bg ~/Pictures/wallpapers/default.jpg fill
+# Monitor layout
+output DP-1 resolution 5120x2160 position 0 0
+output DP-2 resolution 5120x2160 position 0 0
+output DP-6 resolution 2560x1440 position 0 0
+# Position the laptop monitor right beneath the main monitor
+#output eDP-1 resolution 1920x1080 position 1520 2160
+# Position laptop mon to the right of the main monitor
+output eDP-1 resolution 1920x1080 position 2560 0
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 ### Keybindings
 # Start terminal
@@ -42,13 +52,13 @@ bindsym $mod+f fullscreen
 bindsym $mod+Shift+space floating toggle
 
 # Workspaces (1–9)
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1: Code"
+set $ws2 "2: Terminal"
+set $ws3 "3: Browser"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5: Obsidian"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7: Remmina"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -62,35 +72,37 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+10 workspace $ws10
+bindsym $mod+0 workspace $ws10
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Default workspace location
-workspace 1 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace 3 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace 5 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace 7 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace 9 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws1 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws3 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws5 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws7 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws9 output DP-1 DP-2 HDMI-1 DP-1-3
 
-workspace 2 output eDP-1
-workspace 4 output eDP-1
-workspace 6 output eDP-1
-workspace 8 output eDP-1
-workspace 0 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws6 output eDP-1
+workspace $ws8 output eDP-1
+workspace $ws10 output eDP-1
 
 # Apps moved to default workspaces
-assign [app_id="microsoft-edge"] → "1: Code"
+assign [class="Code"] → "1: Code"
 assign [app_id="microsoft-edge"] → "3: Browser"
+assign [class="obsidian"] → "5: Obsidian"
+assign [app_id="org.remmina.Remmina"] → "7: Remmina"
 
 ### Tools
 # Screenshot (area to clipboard)
@@ -103,8 +115,7 @@ bindsym Shift+Print exec grim ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').
 bindsym $mod+c exec clipman pick -t wofi
 
 # Lock screen
-#bindsym $mod+Shift+o exec swaylock -f -c 000000
-bindsym Mod4+l exec swaylock-random-image
+bindsym Mod1+Shift+l exec swaylock-random-image
 
 # Reload sway
 bindsym $mod+Shift+c reload
@@ -112,18 +123,20 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "swaymsg exit"
 
 ### Startup Applications
+exec python ~/.config/sway/inactive-windows-transparency.py -o 0.8 -f 1.0 --global-focus
 exec_always mako
 exec waybar
 exec wallpaper
 exec_always clipman restore
 exec_always swaybg -i ~/Pictures/wallpapers/default.jpg -m fill
 
+
 ### Idle Management
 exec_always swayidle -w \
-    timeout 300 'swaylock-random-image -f -c 000000' \
+    timeout 300 'swaylock-random-image' \
     timeout 600 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock-random-image -f -c 000000'
+    before-sleep 'swaylock-random-image'
 
 ### Input config
 # Touchpad
@@ -136,6 +149,8 @@ input type:touchpad {
 # Keyboard layout
 input * {
     xkb_layout us
+    xkb_variant altgr-intl
+    xkb_options compose:lalt
 }
 
 
@@ -150,10 +165,19 @@ gaps top 10
 gaps right 10
 gaps bottom 10
 gaps left 10
+gaps inner 10
 
 
 input type:touchpad {
     natural_scroll disabled
 }
 
+# Focused window — muted Matcha green
+client.focused          #466B46 #466B46 #C8CCCD #C8CCCD
+
+# Unfocused window — muted gray
+client.unfocused        #3E4446 #3E4446 #C8CCCD #C8CCCD
+
+# Urgent window — soft red
+client.urgent           #B15252 #B15252 #C8CCCD #C8CCCD
 
