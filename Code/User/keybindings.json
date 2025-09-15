@@ -1,0 +1,286 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Toggle between terminal and editor focus
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+Enter",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "alt+shift+Enter",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus",
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+    },
+    {
+        "key": "ctrl+o",
+        "command": "outline.focus",
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "outline.collapse",
+        "when": "outline.active",
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "f",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "d",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "x",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "editor.action.showHover",
+    },
+    {
+        "key": "ctrl+[",
+        "command": "editor.action.showHover",
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "(editorTextFocus && neovim.mode != insert)"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "editorTextFocus && neovim.mode != insert"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "extension.hideGitignored",
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "editor.action.trimTrailingWhitespace",
+    },
+    {
+        "key": "ctrl+b",
+        "command": "editor.debug.action.toggleBreakpoint",
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.scm.focus"
+    },
+    {
+        "key": "-",
+        "command": "git.stageSelectedRanges",
+        "when": "(isInDiffEditor || editorTextFocus) && neovim.mode == visual"
+    },
+    {
+        "key": "+",
+        "command": "git.revertSelectedRanges",
+        "when": "(isInDiffEditor || editorTextFocus) && neovim.mode == visual"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "workbench.action.editor.nextChange",
+        "when": "editorTextFocus && !textCompareEditorActive"
+    },
+    {
+        "key": "alt+shift+k",
+        "command": "workbench.action.editor.previousChange",
+        "when": "editorTextFocus && !textCompareEditorActive"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+shift+k",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "git.stage",
+    },
+    {
+        "key": "ctrl+alt+oem_minus",
+        "command": "git.stageChange",
+    },
+    {
+        "key": "ctrl+=",
+        "command": "git.unstage",
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus",
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus",
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow",
+    },
+    {
+        "key": "tab",
+        "command": "-acceptSelectedSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+oem_1 ctrl+e",
+        "command": "testing.debugFailTests"
+    },
+    {
+        "key": "ctrl+oem_1 ctrl+l",
+        "command": "testing.debugLastRun"
+    },
+    {
+        "key": "ctrl+; ctrl+f",
+        "command": "testing.debugCurrentFile",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "alt+c",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevCodeAction", // in v1.70
+        // "command": "selectNextCodeAction"   // in v1.71
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextCodeAction", // in v1.70
+        //  "command": "selectPrevCodeAction",    // in v1.71
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "workbench.action.decreaseViewWidth",
+        "when": "explorerViewletFocus || editorFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "workbench.action.increaseViewWidth",
+        "when": "explorerViewletFocus || editorFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "workbench.action.decreaseViewHeight",
+        "when": "explorerViewletFocus || editorFocus"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "workbench.action.increaseViewHeight",
+        "when": "explorerViewletFocus || editorFocus"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+]
