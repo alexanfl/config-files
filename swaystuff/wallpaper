@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Path to your wallpaper folder
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+# Start with a random wallpaper
+swaybg -i "$(find "$WALLPAPER_DIR" -type f | shuf -n1)" -m fill &
+OLD_PID_1=$!
+swaybg -o eDP-1 -i "$(find "$WALLPAPER_DIR" -type f | shuf -n1)" -m fill &
+OLD_PID_2=$!
+
+# Loop to change wallpaper every X seconds (e.g., 600 = 10 minutes)
+while true; do
+    sleep 600
+    swaybg -i "$(find "$WALLPAPER_DIR" -type f | shuf -n1)" -m fill &
+    NEW_PID_1=$!
+    swaybg -o eDP-1 -i "$(find "$WALLPAPER_DIR" -type f | shuf -n1)" -m fill &
+    NEW_PID_2=$!
+    sleep 1
+    kill $OLD_PID_1
+    OLD_PID_1=$NEW_PID_1
+    kill $OLD_PID_2
+    OLD_PID_2=$NEW_PID_2
+done

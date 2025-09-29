@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Folder containing your lock screen images
+BG_DIR="$HOME/Pictures/Wallpapers"
+
+# Pick a random image (jpg, jpeg, png)
+IMAGE1=$(find "$BG_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n1)
+IMAGE2=$(find "$BG_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n1)
+
+# Launch swaylock with the selected image
+if [ -n "$IMAGE1" ]; then
+  swaylock --image eDP-1:"$IMAGE1" --image DP-1:"$IMAGE2" --image DP-2:"$IMAGE2" --image DP-3:"$IMAGE2" --image DP-4:"$IMAGE2" --image DP-5:"$IMAGE2" --image DP-6:"$IMAGE2" --image DP-1-3:"$IMAGE2" --image HDMI-1:"$IMAGE2"
+else
+  echo "No valid images found in $BG_DIR"
+fi
