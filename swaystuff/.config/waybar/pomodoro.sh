@@ -1,0 +1,2 @@
+#!/bin/bash
+if [ $button ] && [[ $(.local/bin/i3-gnome-pomodoro status) ]]; then .local/bin/i3-gnome-pomodoro toggle && .local/bin/i3-gnome-pomodoro status; elif [ $button ] && [[ ! $(.local/bin/i3-gnome-pomodoro status) ]]; then .local/bin/i3-gnome-pomodoro start && .local/bin/i3-gnome-pomodoro status; else { A=$(.local/bin/i3-gnome-pomodoro status); [[ $A ]] && echo "🍅 $A" || echo "🍅 Pomodoro"; }; fi
