@@ -4,13 +4,16 @@ set $term alacritty
 set $menu wofi --show drun --prompt "Run:"
 
 # Monitor layout
-output DP-1 resolution 5120x2160 position 0 0
-output DP-2 resolution 5120x2160 position 0 0
-output DP-6 resolution 2560x1440 position 0 0
+output DP-1 position 0 0
+output DP-2 position 0 0
+output DP-3 position 0 0
+output DP-4 position 0 0
+output DP-5 position 0 0
+output DP-6 position 0 0
 # Position the laptop monitor right beneath the main monitor
 #output eDP-1 resolution 1920x1080 position 1520 2160
 # Position laptop mon to the right of the main monitor
-output eDP-1 resolution 1920x1080 position 2560 0
+# output eDP-1 position 2560 0
 
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -28,6 +31,9 @@ bindsym $mod+Shift+q kill
 
 # Start program launcher
 bindsym $mod+d exec $menu
+
+# Screenshot shortcuts with grimshot
+bindsym $mod+Shift+Print exec "grimshot copy area"
 
 # Change focus
 bindsym $mod+h focus left
@@ -60,7 +66,7 @@ set $ws5 "5: Obsidian"
 set $ws6 "6"
 set $ws7 "7: Remmina"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9: Misc."
 set $ws10 "10"
 
 bindsym $mod+1 workspace $ws1
@@ -86,11 +92,11 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Default workspace location
-workspace $ws1 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace $ws3 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace $ws5 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace $ws7 output DP-1 DP-2 HDMI-1 DP-1-3
-workspace $ws9 output DP-1 DP-2 HDMI-1 DP-1-3
+workspace $ws1 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6 HDMI-1 HDMI-A-1 DP-1-3
+workspace $ws3 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6 HDMI-1 HDMI-A-1 DP-1-3
+workspace $ws5 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6 HDMI-1 HDMI-A-1 DP-1-3
+workspace $ws7 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6 HDMI-1 HDMI-A-1 DP-1-3
+workspace $ws9 output DP-1 DP-2 DP-3 DP-4 DP-5 DP-6 HDMI-1 HDMI-A-1 DP-1-3
 
 workspace $ws2 output eDP-1
 workspace $ws4 output eDP-1
@@ -100,9 +106,15 @@ workspace $ws10 output eDP-1
 
 # Apps moved to default workspaces
 assign [class="Code"] → "1: Code"
+assign [app_id="code"] → "1: Code"
 assign [app_id="microsoft-edge"] → "3: Browser"
+assign [instance="microsoft-edge*"] → "3: Browser"
 assign [class="obsidian"] → "5: Obsidian"
 assign [app_id="org.remmina.Remmina"] → "7: Remmina"
+assign [app_id="libreoffice-calc"] → "9: Misc."
+assign [app_id="libreoffice-impress"] → "9: Misc."
+assign [app_id="libreoffice-writer"] → "9: Misc."
+
 
 ### Tools
 # Screenshot (area to clipboard)
@@ -122,6 +134,11 @@ bindsym $mod+Shift+c reload
 # Exit sway
 bindsym $mod+Shift+e exec "swaymsg exit"
 
+# Make sure env vars and xdg-desktop-portal-wlr is running for intune
+exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
+exec_always systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
+
+
 ### Startup Applications
 exec python ~/.config/sway/inactive-windows-transparency.py -o 0.8 -f 1.0 --global-focus
 exec_always mako
@@ -129,6 +146,8 @@ exec waybar
 exec wallpaper
 exec_always clipman restore
 exec_always swaybg -i ~/Pictures/wallpapers/default.jpg -m fill
+# Make gnome-pomodoro starts in order to run i3-gnome-pomodoro
+exec_always gnome-pomodoro --no-default-window
 
 
 ### Idle Management
