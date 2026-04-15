@@ -19,6 +19,9 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+bindsym $mod+space exec swaymsg input "*" xkb_switch_layout next
+
+
 ### Keybindings
 # Start terminal
 bindsym Mod4+Return exec $term
@@ -167,8 +170,8 @@ input type:touchpad {
 
 # Keyboard layout
 input * {
-    xkb_layout us
-    xkb_variant altgr-intl
+    xkb_layout us,no
+    xkb_variant altgr-intl,
     xkb_options compose:lalt
 }
 
