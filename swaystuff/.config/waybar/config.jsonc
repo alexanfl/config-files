@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -224,10 +224,9 @@
     },
     "custom/dismiss_notifications": {
         "exec-if": "command -v makoctl",
-        "exec": "count=$(makoctl list | grep -c '^Notification'); echo \"\\\n($count)\"",
-        "format": "{}",
+        "exec": "count=$(makoctl list | grep -c '^Notification'); if [ $count -gt 0 ]; then printf '{\"text\":\"🔔(%s)\",\"class\":\"has-notifications\"}' \"$count\"; else printf '{\"text\":\"(0)\",\"class\":\"no-notifications\"}'; fi",
         "on-click": "makoctl dismiss --all",
-        "interval": 1
+        "interval": 1,
+        "return-type": "json"
     }
-
 }
