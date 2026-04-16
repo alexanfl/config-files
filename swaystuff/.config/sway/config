@@ -145,10 +145,9 @@ exec_always systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
 ### Startup Applications
 exec python ~/.config/sway/inactive-windows-transparency.py -o 0.8 -f 1.0 --global-focus
 exec_always mako
-exec waybar
-exec wallpaper
+exec_always waybar --replace
+exec_always pkill wallpaper; wallpaper
 exec_always clipman restore
-exec_always swaybg -i ~/Pictures/wallpapers/default.jpg -m fill
 # Make gnome-pomodoro starts in order to run i3-gnome-pomodoro
 exec_always gnome-pomodoro --no-default-window
 
