@@ -132,6 +132,9 @@ bindsym $mod+c exec clipman pick -t wofi
 # Lock screen
 bindsym Mod1+Shift+l exec swaylock-random-image
 
+# Toggle opacity through SIGUSR1 (see script)
+bindsym Mod1+Shift+o exec pkill -USR1 -f inactive-windows-transparency.py
+
 # Reload sway
 bindsym $mod+Shift+c reload
 # Exit sway

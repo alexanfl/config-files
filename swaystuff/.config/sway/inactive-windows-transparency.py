@@ -1,10 +1,5 @@
 #!/usr/bin/python
 
-# This script requires i3ipc-python package (install it from a system package manager
-# or pip).
-# It makes inactive windows transparent. Use `transparency_val` variable to control
-# transparency strength in range of 0…1 or use the command line argument -o.
-
 import argparse
 import signal
 import sys
@@ -16,10 +11,7 @@ import i3ipc
 def on_window(args, ipc, event):
     global focused_set
 
-    # To get the workspace for a container, we need to have received its
-    # parents, so fetch the whole tree
     tree = ipc.get_tree()
-
     focused = tree.find_focused()
     if focused is None:
         return
@@ -42,6 +34,7 @@ def on_window(args, ipc, event):
 
     focused_set -= to_remove
 
+
 def remove_opacity(ipc, focused_opacity):
     for workspace in ipc.get_tree().workspaces():
         for w in workspace:
@@ -50,29 +43,51 @@ def remove_opacity(ipc, focused_opacity):
     sys.exit(0)
 
 
+def toggle_inactive_opacity(ipc, args, signum, frame):
+    global focused_set
+
+    # Toggle inactive opacity
+    args.opacity = "1.0" if args.opacity != "1.0" else "0.8"
+
+    tree = ipc.get_tree()
+    focused = tree.find_focused()
+
+    # Reset state so normal focus handling continues to work
+    focused_set = set()
+
+    for con in tree:
+        if not con.window:
+            continue
+        if focused and con.id == focused.id:
+            con.command("opacity " + args.focused)
+            focused_set.add(con.id)
+        else:
+            con.command("opacity " + args.opacity)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="This script allows you to set the transparency of unfocused windows in sway."
+        description="Set transparency of unfocused windows in sway"
     )
     parser.add_argument(
         "--opacity",
         "-o",
         type=str,
         default="0.80",
-        help="set inactive opacity value in range 0...1",
+        help="inactive opacity value (0–1)",
     )
     parser.add_argument(
         "--focused",
         "-f",
         type=str,
         default="1.0",
-        help="set focused opacity value in range 0...1",
+        help="focused opacity value (0–1)",
     )
     parser.add_argument(
         "--global-focus",
         "-g",
         action="store_true",
-        help="only have one opaque window across all workspaces",
+        help="only one opaque window across all workspaces",
     )
     args = parser.parse_args()
 
@@ -85,7 +100,15 @@ if __name__ == "__main__":
             window.command("opacity " + args.focused)
         else:
             window.command("opacity " + args.opacity)
-    for sig in [signal.SIGINT, signal.SIGTERM]:
-        signal.signal(sig, lambda signal, frame: remove_opacity(ipc, args.focused))
+
+    for sig in (signal.SIGINT, signal.SIGTERM):
+        signal.signal(sig, lambda s, f: remove_opacity(ipc, args.focused))
+
+    # Toggle inactive opacity with SIGUSR1
+    signal.signal(
+        signal.SIGUSR1,
+        lambda s, f: toggle_inactive_opacity(ipc, args, s, f),
+    )
+
     ipc.on("window", partial(on_window, args))
     ipc.main()
