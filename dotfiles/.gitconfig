@@ -1,0 +1,33 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Alexander Fleischer
+	email = alexander.fleischer@statkraft.com
+[alias]
+	cm = commit -m
+	pl = pull
+	ps = push
+	psf = push -f
+	c = commit
+	co = checkout
+	com = checkout master
+	cod = checkout develop
+	cob = checkout -b
+	swm = switch main
+	b = branch
+	br = branch --remote
+	bd = branch --delete
+	s = status
+	r = restore
+	rs = restore --staged
+    a = add
+    ap = add --patch
+    fap = fetch --all --prune
+    d = diff
+    dc = diff --cached
+    rb = rebase
+    rbc = rebase --continue
+[push]
+    autoSetupremote = true
+[safe]
+	directory = /mnt/applications/OSL/scripting_applications/dev/co_owner
