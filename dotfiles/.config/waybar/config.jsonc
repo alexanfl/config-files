@@ -214,13 +214,13 @@
 		}
     },
     "custom/pomodoro": {
-        "exec": "sh /home/u53118/.config/waybar/pomodoro.sh",
+        "exec": "sh ~/.config/waybar/pomodoro.sh",
          "return-type": "text",
          "interval": 1,
          "format": "{}",
-         "on-click": "i3-gnome-pomodoro toggle",
-         "on-click-middle": "i3-gnome-pomodoro stop",
-         "on-click-right": "i3-gnome-pomodoro start"
+         "on-click": "~/.local/bin/i3-gnome-pomodoro toggle",
+         "on-click-middle": "~/.local/bin/i3-gnome-pomodoro stop",
+         "on-click-right": "~/.local/bin/i3-gnome-pomodoro start"
     },
     "custom/dismiss_notifications": {
         "exec-if": "command -v makoctl",

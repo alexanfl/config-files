@@ -1,2 +1,9 @@
 #!/bin/bash
-if [ $button ] && [[ $(/home/u53118/.local/bin/i3-gnome-pomodoro status) ]]; then /home/u53118/.local/bin/i3-gnome-pomodoro toggle && /home/u53118/.local/bin/i3-gnome-pomodoro status; elif [ $button ] && [[ ! $(/home/u53118/.local/bin/i3-gnome-pomodoro status) ]]; then /home/u53118/.local/bin/i3-gnome-pomodoro start && /home/u53118/.local/bin/i3-gnome-pomodoro status; else { A=$(/home/u53118/.local/bin/i3-gnome-pomodoro status); [[ $A ]] && echo "🍅 $A" || echo "🍅 Pomodoro"; }; fi
+#!/bin/bash
+
+A=$(/home/u53118/.local/bin/i3-gnome-pomodoro status)
+if [[ -n $A ]]; then
+    echo "🍅 $A"
+else
+    echo "🍅 Pomodoro"
+fi
