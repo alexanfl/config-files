@@ -144,9 +144,10 @@ bindsym $mod+Shift+c reload
 # Exit sway
 bindsym $mod+Shift+e exec "swaymsg exit"
 
-# Make sure env vars and xdg-desktop-portal-wlr is running for intune
+# Make sure env vars and xdg-desktop-portal-wlr is running for things like Teams screen share
 exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 exec_always systemctl --user restart xdg-desktop-portal xdg-desktop-portal-wlr
+exec systemctl --user start sway-session.target
 
 
 ### Startup Applications
